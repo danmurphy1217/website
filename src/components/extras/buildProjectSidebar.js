@@ -16,29 +16,52 @@ const useStyles = makeStyles((theme) => ({
   },
   nested: {
     paddingLeft: theme.spacing(4),
-    minWidth: 450
+    minWidth: "auto",
   },
 }));
 
 function SidebarWith({ companyDetails }) {
   const classes = useStyles();
+  const projectArray = []
+  companyDetails.forEach( (company) => company.projects.forEach((project) =>  projectArray.push(project.label )));
+  
+  console.log(projectArray);
+  const initialProjectState = {}
+  projectArray.forEach((project) => initialProjectState[project] = false )
+  
+  console.log(initialProjectState);
+  
   const [open, setOpen] = useState({
-    "Stacauto": false,
-    "Pathstream": false,
-    "Jam": false,
-    "Wilbur Labs": false
+    Stacauto: false,
+    Pathstream: false,
+    Jam: false,
+    "Wilbur Labs": false,
   });
 
-  const handleClick = (companyName) => {
+  const [projectClicked, setProjectClicked] = useState(initialProjectState);
+
+  const handleCompanyOpen = (companyName) => {
     console.log(open[companyName]);
-    setOpen({[companyName]: !open[companyName]})
+    setOpen({ [companyName]: !open[companyName] });
   };
+
+  const handleProjectClicked = (projectName) => {
+    console.log(projectClicked[projectName]);
+    setProjectClicked({ [projectName]: !projectClicked[projectName] });
+  }
   const companyFormattedComponents = [];
 
   companyDetails.forEach((company) => {
     companyFormattedComponents.push(
       <React.Fragment key={company.companyName}>
-        <ListItem className={classes.root} key={company.companyName} button onClick={() => {handleClick(company.companyName)}}>
+        <ListItem
+          className={classes.root}
+          key={company.companyName}
+          button
+          onClick={() => {
+            handleCompanyOpen(company.companyName);
+          }}
+        >
           <ListItemText primary={company.companyName} />
           {open[company.companyName] ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
@@ -46,13 +69,22 @@ function SidebarWith({ companyDetails }) {
           <List>
             {company.projects.map((project) => {
               return (
-                <Collapse in={open[company.companyName]} timeout="auto" unmountOnExit>
+                <Collapse
+                  in={open[company.companyName]}
+                  timeout="auto"
+                  unmountOnExit
+                >
                   <List component="div" disablePadding>
-                    <ListItem button className={classes.nested}>
-                      <ListItemIcon>{/* <StarBorder /> */}</ListItemIcon>
+                    <ListItem
+                      button
+                      key={company.companyName}
+                      className={classes.nested}
+                      onClick= { () => {handleProjectClicked(project.label)}}
+                    >
                       <ListItemText primary={project.label} />
                     </ListItem>
                   </List>
+                  { projectClicked[project.label] ? <p> {project.label} Clicked</p> : null }
                 </Collapse>
               );
             })}
@@ -60,7 +92,9 @@ function SidebarWith({ companyDetails }) {
         ) : (
           <List>
             <ListItem button>
-              <ListItemText>Projects Coming Soon!</ListItemText>
+              <ListItemText key={company.companyName}>
+                Projects Coming Soon!
+              </ListItemText>
             </ListItem>
           </List>
         )}
@@ -69,19 +103,32 @@ function SidebarWith({ companyDetails }) {
   });
 
   return (
-    <List
-      subheader={
-        <ListSubheader style={{ fontSize: "25px" }}>
-          Professional Projects
-        </ListSubheader>
-      }
-    >
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding></List>
-      </Collapse>
-      { console.log(open, open["Stacauto"]) }
-      {companyFormattedComponents}
-    </List>
+    <div style={{ display: "flex" }}>
+      <List
+        subheader={
+          <ListSubheader style={{ fontSize: "25px" }}>
+            Professional Projects
+          </ListSubheader>
+        }
+      >
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding></List>
+        </Collapse>
+        {companyFormattedComponents}
+      </List>
+      {open["Stacauto"] ? (
+        <h2 style={{ fontSize: "60px" }}>Stacauto was opened</h2>
+      ) : null}
+      {open["Wilbur Labs"] ? (
+        <h2 style={{ fontSize: "60px" }}>Wilbur was opened</h2>
+      ) : null}
+      {open["Pathstream"] ? (
+        <h2 style={{ fontSize: "60px" }}>Pathstream was opened</h2>
+      ) : null}
+      {open["Jam"] ? (
+        <h2 style={{ fontSize: "60px" }}>Jam was opened</h2>
+      ) : null}
+    </div>
   );
 }
 
