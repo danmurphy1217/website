@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomePage from "./pages/Home";
+import AboutPage from "./pages/About";
+import ContactPage from "./pages/Contact";
+// import ProjectsPage from "./pages/Projects";
+import SidebarWith from "./components/extras/buildProjectSidebar";
+import { Global } from "./styles/Global";
+
+const items = [
+  {
+    name: "Stacauto",
+    label: "Backend API",
+  },
+  {
+    name: "Stacauto",
+    label: "Shopify Lambda Function"
+  },
+  {
+    name: "Pathstream",
+    label: "Python Data Analysis"
+  }
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Global/>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/projects" component={() => <SidebarWith companyDetails={items}/>} />
+          <Route exact path="/about" component={AboutPage} />
+          <Route exact path="/contact" component={ContactPage} />
+        </Switch>
+      </Router>
     </div>
   );
 }
