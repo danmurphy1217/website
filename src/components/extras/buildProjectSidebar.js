@@ -10,6 +10,8 @@ import Collapse from "@material-ui/core/Collapse";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
+  // ! useful for overiding material ui default typography
+  // https://stackoverflow.com/questions/43975839/material-ui-next-styling-text-inside-listitemtext
   root: {
     width: 350,
     height: "auto", 
