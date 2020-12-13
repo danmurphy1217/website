@@ -12,12 +12,17 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 350,
-    height: "auto",
+    height: "auto", 
+    color: "#748492",
+    fontWeight: "bold", 
+    fontSize: "20px"
   },
   nested: {
     paddingLeft: theme.spacing(4),
     minWidth: "auto",
+    fontSize: "16px",
   },
+   
 }));
 
 function SidebarWith({ companyDetails }) {
@@ -67,7 +72,7 @@ function SidebarWith({ companyDetails }) {
             handleCompanyOpen(company.companyName);
           }}
         >
-          <ListItemText primary={company.companyName} />
+          <ListItemText primary={company.companyName} disableTypography/>
           {open[company.companyName] ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         {Array.isArray(company.projects) ? (
@@ -75,9 +80,6 @@ function SidebarWith({ companyDetails }) {
             {company.projects.map((project) => {
               return (
                 <div>
-                  {/* {projectClicked[project.label] ? (
-                    <p> {project.label} Clicked</p>
-                  ) : null} */}
                   <Collapse
                     in={open[company.companyName]}
                     timeout="auto"
@@ -92,7 +94,7 @@ function SidebarWith({ companyDetails }) {
                           handleProjectClicked(project.label);
                         }}
                       >
-                        <ListItemText primary={project.label} />
+                        <ListItemText primary={project.label} disableTypography/>
                       </ListItem>
                     </List>
                   </Collapse>
@@ -143,7 +145,7 @@ function SidebarWith({ companyDetails }) {
     <div style={{ display: "flex" }}>
       <List
         subheader={
-          <ListSubheader style={{ fontSize: "25px" }}>
+          <ListSubheader style={{ fontSize: "25px", paddingTop: "15%", fontWeight: "bold"}}>
             Professional Projects
           </ListSubheader>
         }
