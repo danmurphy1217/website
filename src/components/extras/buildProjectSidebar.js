@@ -22,23 +22,28 @@ const useStyles = makeStyles((theme) => ({
 
 function SidebarWith({ companyDetails }) {
   const classes = useStyles();
-  const projectArray = []
-  companyDetails.forEach( (company) => company.projects.forEach((project) =>  projectArray.push(project.label )));
-  
-  console.log(projectArray);
-  const initialProjectState = {}
-  projectArray.forEach((project) => initialProjectState[project] = false )
-  
-  console.log(initialProjectState);
-  
+  const projectArray = [];
+  companyDetails.forEach((company) =>
+    company.projects.forEach((project) => projectArray.push(project.label))
+  );
+  const initialProjectState = {};
+  projectArray.forEach((project) => (initialProjectState[project] = false));
+
   const [open, setOpen] = useState({
     Stacauto: false,
     Pathstream: false,
     Jam: false,
     "Wilbur Labs": false,
   });
-
   const [projectClicked, setProjectClicked] = useState(initialProjectState);
+
+  const companyNames = companyDetails.map((company) => {
+    return company.companyName;
+  });
+  const projectDetails = {};
+  companyDetails.forEach((company) => {
+    projectDetails[company.companyName] = company.projects;
+  });
 
   const handleCompanyOpen = (companyName) => {
     console.log(open[companyName]);
@@ -48,9 +53,9 @@ function SidebarWith({ companyDetails }) {
   const handleProjectClicked = (projectName) => {
     console.log(projectClicked[projectName]);
     setProjectClicked({ [projectName]: !projectClicked[projectName] });
-  }
-  const companyFormattedComponents = [];
+  };
 
+  const companyFormattedComponents = [];
   companyDetails.forEach((company) => {
     companyFormattedComponents.push(
       <React.Fragment key={company.companyName}>
@@ -69,23 +74,29 @@ function SidebarWith({ companyDetails }) {
           <List>
             {company.projects.map((project) => {
               return (
-                <Collapse
-                  in={open[company.companyName]}
-                  timeout="auto"
-                  unmountOnExit
-                >
-                  <List component="div" disablePadding>
-                    <ListItem
-                      button
-                      key={company.companyName}
-                      className={classes.nested}
-                      onClick= { () => {handleProjectClicked(project.label)}}
-                    >
-                      <ListItemText primary={project.label} />
-                    </ListItem>
-                  </List>
-                  { projectClicked[project.label] ? <p> {project.label} Clicked</p> : null }
-                </Collapse>
+                <div>
+                  {/* {projectClicked[project.label] ? (
+                    <p> {project.label} Clicked</p>
+                  ) : null} */}
+                  <Collapse
+                    in={open[company.companyName]}
+                    timeout="auto"
+                    unmountOnExit
+                  >
+                    <List component="div" disablePadding>
+                      <ListItem
+                        button
+                        key={company.companyName}
+                        className={classes.nested}
+                        onClick={() => {
+                          handleProjectClicked(project.label);
+                        }}
+                      >
+                        <ListItemText primary={project.label} />
+                      </ListItem>
+                    </List>
+                  </Collapse>
+                </div>
               );
             })}
           </List>
@@ -102,6 +113,32 @@ function SidebarWith({ companyDetails }) {
     );
   });
 
+  const companyNameToDisplay = [];
+  companyNames.forEach((name) => {
+    return open[name]
+      ? companyNameToDisplay.push(
+          <h2 style={{ fontSize: "60px" }}> {name} was opened</h2>
+        )
+      : null;
+  });
+
+  const projectNameToDisplay = [];
+  companyNames.forEach((name) => {
+    if (open[name]) {
+      let companyProjects = projectDetails[name];
+      companyProjects.forEach((project) => {
+        console.log(projectClicked[project.label]);
+        if (projectClicked[project.label]) {
+          return projectNameToDisplay.push(
+            <h2 style={{ fontSize: "60px", color: "black" }}>
+              {project.label} was clicked.
+            </h2>
+          );
+        }
+      });
+    }
+  });
+
   return (
     <div style={{ display: "flex" }}>
       <List
@@ -116,18 +153,8 @@ function SidebarWith({ companyDetails }) {
         </Collapse>
         {companyFormattedComponents}
       </List>
-      {open["Stacauto"] ? (
-        <h2 style={{ fontSize: "60px" }}>Stacauto was opened</h2>
-      ) : null}
-      {open["Wilbur Labs"] ? (
-        <h2 style={{ fontSize: "60px" }}>Wilbur was opened</h2>
-      ) : null}
-      {open["Pathstream"] ? (
-        <h2 style={{ fontSize: "60px" }}>Pathstream was opened</h2>
-      ) : null}
-      {open["Jam"] ? (
-        <h2 style={{ fontSize: "60px" }}>Jam was opened</h2>
-      ) : null}
+      {companyNameToDisplay}
+      {projectNameToDisplay}
     </div>
   );
 }
