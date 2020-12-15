@@ -2,29 +2,38 @@ import React, { useState } from "react";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import Collapse from "@material-ui/core/Collapse";
 import { makeStyles } from "@material-ui/core/styles";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Accordion from "react-bootstrap/Accordion";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const useStyles = makeStyles((theme) => ({
   // ! useful for overiding material ui default typography
   // https://stackoverflow.com/questions/43975839/material-ui-next-styling-text-inside-listitemtext
   root: {
     width: 350,
-    height: "auto", 
-    color: "#748492",
-    fontWeight: "bold", 
-    fontSize: "20px"
+    height: "auto",
+    color: "#5C5C5C",
+    fontWeight: "bold",
+    fontSize: "20px",
   },
   nested: {
     paddingLeft: theme.spacing(4),
     minWidth: "auto",
     fontSize: "16px",
   },
-   
+  header: {
+    color: "black",
+    fontWeight: "bold",
+    fontSize: "25px",
+    paddingTop: "15%",
+  },
 }));
 
 function SidebarWith({ companyDetails }) {
@@ -74,7 +83,7 @@ function SidebarWith({ companyDetails }) {
             handleCompanyOpen(company.companyName);
           }}
         >
-          <ListItemText primary={company.companyName} disableTypography/>
+          <ListItemText primary={company.companyName} disableTypography />
           {open[company.companyName] ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         {Array.isArray(company.projects) ? (
@@ -96,7 +105,10 @@ function SidebarWith({ companyDetails }) {
                           handleProjectClicked(project.label);
                         }}
                       >
-                        <ListItemText primary={project.label} disableTypography/>
+                        <ListItemText
+                          primary={project.label}
+                          disableTypography
+                        />
                       </ListItem>
                     </List>
                   </Collapse>
@@ -132,11 +144,61 @@ function SidebarWith({ companyDetails }) {
       let companyProjects = projectDetails[name];
       companyProjects.forEach((project) => {
         console.log(projectClicked[project.label]);
+        console.log(project);
+
         if (projectClicked[project.label]) {
+          const requirements = [];
+          project.meta.projectRequirements.forEach((p) => {
+            requirements.push(<li>{p}</li>);
+          });
+          const techStack = [];
+          project.meta.techStack.forEach((p) => {
+            techStack.push(<li>{p}</li>);
+          });
+          const problemsSolved = [];
+          project.meta.problemsSolved.forEach((p) => {
+            problemsSolved.push(<li>{p}</li>);
+          });
           return projectNameToDisplay.push(
-            <h2 style={{ fontSize: "60px", color: "black" }}>
-              {project.label} was clicked.
-            </h2>
+            <Jumbotron style={{ backgroundColor: "#C8C8C8" }}>
+              <h1>{project.label}</h1>
+              <p>{project.meta.description}</p>
+              <p>
+                <Button variant="primary">Demo</Button>
+              </p>
+              <Accordion defaultActiveKey="0">
+                <Card>
+                  <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                      Project Requirements
+                    </Accordion.Toggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="0">
+                    <Card.Body>{requirements}</Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card>
+                  <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                      Tech Stack
+                    </Accordion.Toggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="1">
+                    <Card.Body>{techStack}</Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card>
+                  <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="2">
+                      Outcomes
+                    </Accordion.Toggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="2">
+                    <Card.Body>{problemsSolved}</Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
+            </Jumbotron>
           );
         }
       });
@@ -147,8 +209,8 @@ function SidebarWith({ companyDetails }) {
     <div style={{ display: "flex" }}>
       <List
         subheader={
-          <ListSubheader style={{ fontSize: "25px", paddingTop: "15%", fontWeight: "bold"}}>
-            Professional Projects
+          <ListSubheader className={classes.header}>
+            Professional
           </ListSubheader>
         }
       >
@@ -157,7 +219,7 @@ function SidebarWith({ companyDetails }) {
         </Collapse>
         {companyFormattedComponents}
       </List>
-      {companyNameToDisplay}
+      {/* {companyNameToDisplay} */}
       {projectNameToDisplay}
     </div>
   );
