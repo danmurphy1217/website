@@ -32,8 +32,8 @@ const HomePageSupporters = () => {
           <a href= "/projects" target="_blank" rel="noreferrer" style={{ color: "#748592", textDecoration: "underline", textDecorationColor: "#C8C8C8", fontWeight: "bold" }}>
           {' '}personal projects
           </a>. I'm passionate about contributing to Open Source Software, designing accessible and easy-to-use Interfaces, and building a more equitable technoligical future.
-          <br/><br/>Learn more about <a href= "/about" target="_blank" rel="noreferrer" style={{ color: "#748592", textDecoration: "underline", textDecorationColor: "#C8C8C8", fontWeight: "bold" }}>myself</a>
-          {' ' }and check out some of <a href= "/projects" target="_blank" rel="noreferrer" style={{ color: "#748592", textDecoration: "underline", textDecorationColor: "#C8C8C8", fontWeight: "bold" }}>my projects</a>!
+          <br/><br/>Learn more <a href= "/about" target="_blank" rel="noreferrer" style={{ color: "#748592", textDecoration: "underline", textDecorationColor: "#C8C8C8", fontWeight: "bold" }}>about me</a>
+          {' ' }and the things I'm <a href= "/projects" target="_blank" rel="noreferrer" style={{ color: "#748592", textDecoration: "underline", textDecorationColor: "#C8C8C8", fontWeight: "bold" }}>working on</a>!
           </SupportContentText>
       </SupportingContentWrapper>
     </SecondaryCard>
