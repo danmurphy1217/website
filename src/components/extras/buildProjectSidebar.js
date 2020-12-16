@@ -68,6 +68,8 @@ function SidebarWith({ companyDetails }) {
 
   const handleProjectClicked = (projectName) => {
     console.log(projectClicked[projectName]);
+    console.log("HANDLING PROJECT");
+    console.log(projectName);
     setProjectClicked({ [projectName]: !projectClicked[projectName] });
   };
 
@@ -166,7 +168,7 @@ function SidebarWith({ companyDetails }) {
               <p>
                 <Button variant="primary">Demo</Button>
               </p>
-              <Accordion defaultActiveKey="0">
+              <Accordion>
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
@@ -180,7 +182,7 @@ function SidebarWith({ companyDetails }) {
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                      Tech Stack
+                      Tech Stack Used
                     </Accordion.Toggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="1">
@@ -209,9 +211,7 @@ function SidebarWith({ companyDetails }) {
     <div style={{ display: "flex" }}>
       <List
         subheader={
-          <ListSubheader className={classes.header}>
-            Professional
-          </ListSubheader>
+          <ListSubheader className={classes.header}>Professional</ListSubheader>
         }
       >
         <Collapse in={open} timeout="auto" unmountOnExit>
