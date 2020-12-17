@@ -48,16 +48,20 @@ const navLinkStylesLeave = (e) => {
 const Header = () => {
   return (
     <HeaderWrapper>
-      <StyledLogo to="/"
-      onMouseEnter= { (e) => {
-        // TODO: create image and set rotation properties
-        e.target.style = "text-decoration: underline;text-decoration-color: #525252; color: #C8C8C8"
-        // e.target.style = "-webkit-transform: rotate(180deg);"
-      }}
-      // onMouseLeave= { (e) => {
-      //   e.target.style = "-webkit-transform: rotate(0deg);"
-      // }}
-      >Dan Murphy</StyledLogo>
+      <StyledLogo
+        to="/"
+        onMouseEnter={(e) => {
+          // TODO: create image and set rotation properties
+          e.target.style =
+            "text-decoration: underline;text-decoration-color: #525252; color: #C8C8C8";
+          // e.target.style = "-webkit-transform: rotate(180deg);"
+        }}
+        // onMouseLeave= { (e) => {
+        //   e.target.style = "-webkit-transform: rotate(0deg);"
+        // }}
+      >
+        Dan Murphy
+      </StyledLogo>
       <StyledLinkWrapper>
         <StyledLink
           to="/projects"

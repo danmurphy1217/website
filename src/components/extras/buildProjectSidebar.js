@@ -29,10 +29,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "16px",
   },
   header: {
+    paddingLeft: theme.spacing(2),
     color: "black",
     fontWeight: "bold",
     fontSize: "25px",
-    paddingTop: "15%",
+    paddingTop: "20%",
   },
 }));
 
@@ -162,7 +163,7 @@ function SidebarWith({ companyDetails }) {
             problemsSolved.push(<li>{p}</li>);
           });
           return projectNameToDisplay.push(
-            <Jumbotron style={{ backgroundColor: "#C8C8C8" }}>
+            <Jumbotron style={{ backgroundColor: "#C8C8C8", maxWidth: "65%" }}>
               <h1>{project.label}</h1>
               <p>{project.meta.description}</p>
               <p>
@@ -209,11 +210,8 @@ function SidebarWith({ companyDetails }) {
 
   return (
     <div style={{ display: "flex" }}>
-      <List
-        subheader={
-          <ListSubheader className={classes.header}>Professional</ListSubheader>
-        }
-      >
+      <List>
+        <h1 className={classes.header}>Professional Projects</h1>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding></List>
         </Collapse>
