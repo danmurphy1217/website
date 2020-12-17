@@ -33,14 +33,69 @@ const StyledLogo = styled(NavLink)`
   margin-right: auto; // https://stackoverflow.com/questions/23621650/how-to-justify-a-single-flexbox-item-override-justify-content
 `;
 
+const navLinkStylesEnter = (e) => {
+  e.target.style.textDecoration = "underline";
+  e.target.style.textDecorationThickness = "2px";
+  e.target.style.textDecorationColor = "#C8C8C8";
+  e.target.style.color = "#525252";
+};
+
+const navLinkStylesLeave = (e) => {
+  e.target.style.textDecoration = "none";
+  e.target.style.color = "#525252";
+};
+
 const Header = () => {
   return (
     <HeaderWrapper>
-      <StyledLogo to="/">Dan Murphy</StyledLogo>
+      <StyledLogo
+        to="/"
+        onMouseEnter={(e) => {
+          // TODO: create image and set rotation properties
+          e.target.style =
+            "text-decoration: underline;text-decoration-color: #525252; color: #C8C8C8";
+          // e.target.style = "-webkit-transform: rotate(180deg);"
+        }}
+        // onMouseLeave= { (e) => {
+        //   e.target.style = "-webkit-transform: rotate(0deg);"
+        // }}
+      >
+        Dan Murphy
+      </StyledLogo>
       <StyledLinkWrapper>
-        <StyledLink to="/projects">Projects</StyledLink>
-        <StyledLink to="/about">About</StyledLink>
-        <StyledLink to="/contact">Contact</StyledLink>
+        <StyledLink
+          to="/projects"
+          onMouseEnter={(e) => {
+            navLinkStylesEnter(e);
+          }}
+          onMouseLeave={(e) => {
+            navLinkStylesLeave(e);
+          }}
+        >
+          Projects
+        </StyledLink>
+        <StyledLink
+          to="/about"
+          onMouseEnter={(e) => {
+            navLinkStylesEnter(e);
+          }}
+          onMouseLeave={(e) => {
+            navLinkStylesLeave(e);
+          }}
+        >
+          About
+        </StyledLink>
+        <StyledLink
+          to="/contact"
+          onMouseEnter={(e) => {
+            navLinkStylesEnter(e);
+          }}
+          onMouseLeave={(e) => {
+            navLinkStylesLeave(e);
+          }}
+        >
+          Contact
+        </StyledLink>
       </StyledLinkWrapper>
     </HeaderWrapper>
   );
