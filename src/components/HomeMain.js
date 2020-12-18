@@ -1,6 +1,5 @@
 import Typewriter from "typewriter-effect";
 import styled from "styled-components";
-import { formatOf } from "./extras/customFormatters";
 
 const Root = styled.div`
     display: flex;
@@ -20,24 +19,14 @@ const PlainText = styled.header`
   padding-top: 150px;
 `;
 
-const Descriptors = () => {
+const Descriptors = (props) => {
+  const typewriter = props.config ? <Typewriter options={props.config}/> : null
   return (
       <Root>  
         <MainCard>
           <PlainText>
-              I AM A...
-              <Typewriter
-              options={{
-                  strings: [
-                  `${formatOf("ENGINEER")}`,
-                  `${formatOf("STUDENT")}`,
-                  `${formatOf("MUSICIAN")}`,
-                  `${formatOf("WRITER")}`,
-                  ],
-                  autoStart: true,
-                  loop: true,
-              }}
-              />
+            {props.plaintext}
+            {typewriter}
           </PlainText>
         </MainCard>
     </Root>

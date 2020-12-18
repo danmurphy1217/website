@@ -1,16 +1,19 @@
 import Header from "../components/Header";
 import styled from "styled-components";
+import { Descriptors } from "../components/HomeMain";
+import BasicTimeline from "../components/AboutMain";
+import { formatOf } from "../components/extras/customFormatters";
 
-const AboutBody = styled.body`
-  background-color: #005086;
+const AboutBody = styled.div`
+  // background-color: #005086;
 `;
 
 const AboutPage = () => {
   return (
       <AboutBody>
         <Header />
-        <h1>ABOUT</h1>
-        <h2>Dan</h2>
+        <Descriptors plaintext="ABOUT ME" />
+        <BasicTimeline />
       </AboutBody>
   );
 };
