@@ -11,7 +11,7 @@ const items = [
         label: "Live Backend API",
         meta: {
           description:
-            "I designed and built a robust Backend API built to support Stacauto's frontend UX. This API has 6 endpoints that unlock access to all aspects of our database ranging from vehicle-specific information such as Make, Model, VIN, and Exterior and Interior Color to Dealer-specific information such as the Dealer ID, Address, and more.",
+            "I designed and built a robust Backend API to support Stacauto's frontend UX. This API has 6 endpoints that unlock access to all aspects of our database ranging from vehicle-specific information such as Make, Model, VIN, and Exterior and Interior Color to Dealer-specific information such as the Dealer ID, Address, and more.",
           techStack: [
             "Python",
             "Django",
@@ -44,7 +44,7 @@ const items = [
         label: "MySQL Design and Implementation",
         meta: {
           description:
-            "I designed and built the development and production databases that stored information about our dealer partners, test drivers, and vehicle inventory. This included a pipeline built with Python and MySQL that updated inventory each day, tracked test drives, and stored meta-data about our core business. Additionally, I was in charge of creating users and providing employees with credentials.",
+            "I designed and built the development and production databases that stored information about our dealer partners, test drivers, and vehicle inventory. This includes a pipeline built with Python and MySQL that updated inventory each day, tracked test drives, and stored meta-data about our core businesses (test drives and dealer partnerships). Additionally, I was in charge of creating users and providing employees with credentials to access the database.",
           techStack: [
             "MySQL",
             "Python",
@@ -123,12 +123,12 @@ const items = [
         label: "MySQL Course Review",
         meta: {
           description:
-            "Edited and reviewed core components of the MySQL Data Analysis course. This included writing and checking knowledge checks, module reviews, and project model answers",
+            "Edited and reviewed core components of the MySQL Data Analysis course. This included writing and reviewing knowledge checks, module reviews, and project model answers",
           techStack: ["MySQL"],
           projectRequirements: [
             "Validate project answers and knowledge checks",
           ],
-          problemsSolved: [],
+          problemsSolved: ["Learned about the Pathstream platform and made my first significant contributions to the LXD Data Team"],
         },
       },
       {
@@ -136,16 +136,16 @@ const items = [
         label: "Python For Data Analysis Course",
         meta: {
           description:
-            "Helped design, write, and review the course prior to its release in early 2021. This includes writing lessons and performing technical reviews, amongst other things.",
+            "Helped design, write, and review the course prior to its release in early 2021. This includes writing lessons on NumPy, Docstrings and documentation standards, and for loops, and performing technical reviews, amongst other things.",
           techStack: [
             "Python (core packages utilized include Matplotlib, NumPy, Pandas)",
           ],
           projectRequirements: [
-            "Design and implement a course that traches core concepts of data analysis with the Python programming language",
+            "Design and implement a course that teaches core concepts of data analysis with the Python programming language",
           ],
           problemsSolved: [
             "Decomposed complex concepts into comprehensible lesson plans",
-            "Used python testing frameworks to write test cases for lesson and activities",
+            "Used Python testing frameworks such as Unit test and Pytest to write test cases for lessons and activities",
           ],
         },
       },
@@ -155,7 +155,7 @@ const items = [
         meta: {
           description:
             "Reviewed and updated the Unity Courses from Unity version 2018.4 to 2019. Core tasks included updating lessons and lesson content such as projects and labs.",
-          techStack: ["Unity 2019.4"],
+          techStack: ["Unity 2019.4", "Unity 2018.X"],
           projectRequirements: [
             "Update outdated lesson material",
             "Validate the steps outlined in projects and lessons and, if necessary, update them.",
@@ -183,8 +183,8 @@ const items = [
           ],
           projectRequirements: [
             "Simple and intuitive user interface",
-            "Qiuck and reliable process",
-            "Proper authentication which only allows Wilbur Labs employees to access the web application",
+            "Quick and reliable process",
+            "Authentication which only allows Wilbur Labs employees to access the web application",
           ],
           problemsSolved: [
             "Deployed with Google Cloud Run",
@@ -229,7 +229,7 @@ const items = [
         label: "Matching Algorithm",
         meta: {
           description:
-            "As the lead engineer at Jam, I was in sole charge of our internal matching algorithm. Core tasks in this role included algorithm upkeep, documentation, writing unit tests, adding additional criteria for the matching algorithm, and modularizing the application",
+            "As the lead engineer at Jam, I was in sole charge of our internal matching algorithm. Core tasks in this role included algorithm upkeep, documentation, writing unit tests, adding additional criteria for the matching algorithm, and modularizing the application.",
           techStack: ["Python", "CI with Gitlab", "Airtable API", "Azure"],
           projectRequirements: [
             "Handling any and all errors that may arise",
@@ -251,7 +251,7 @@ const items = [
         label: "Regenerative Agriculture Assessment Tool",
         meta: {
           description:
-            "The Western Sustainability Exchange needed an update to their in-house assessment tool, and I was licensed as the sole developer to build a robust backend API that retrieved a ranches assessment responses from Airtable, performed scoring logic, and built a PDF that outlined core insights. Additionally, I then update data in Airtable with the corresponding public AWS S3 link to the PDF and send the respondent an email with the PDF attached.",
+            "The Western Sustainability Exchange needed an update to their in-house assessment tool, and I was licensed as the sole developer to build a robust backend API that retrieved a ranches assessment responses from Airtable, performed scoring logic, and built a PDF that outlined core insights. Additionally, I then programmatically updated data in Airtable with the public AWS S3 link to the PDF and send the respondent an email with the PDF attached.",
           techStack: [
             "Python",
             "Flask",
