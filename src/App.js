@@ -3,23 +3,7 @@ import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import ProjectsPage from "./pages/Projects";
-import SidebarWith from "./components/extras/buildProjectSidebar";
 import { Global } from "./styles/Global";
-
-const items = [
-  {
-    name: "Stacauto",
-    label: "Backend API",
-  },
-  {
-    name: "Stacauto",
-    label: "Shopify Lambda Function"
-  },
-  {
-    name: "Pathstream",
-    label: "Python Data Analysis"
-  }
-]
 
 function App() {
   return (

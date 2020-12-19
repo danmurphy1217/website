@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Divider from "./extras/Divider";
-import { formatOf } from "./extras/customFormatters";
 
 const SecondaryCard = styled.div`
   background-color: ${(props) => props.color || "#748592"};
