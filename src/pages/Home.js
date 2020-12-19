@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import { Descriptors } from "../components/HomeMain";
 import HomePageSupporters from "../components/HomeSecondary";
 import { formatOf } from "../components/extras/customFormatters";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -21,6 +22,7 @@ const HomePage = () => {
         }}
       />
       <HomePageSupporters />
+      <Footer/>
     </div>
   );
 };

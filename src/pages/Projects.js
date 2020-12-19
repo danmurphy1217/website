@@ -5,7 +5,7 @@ const ProjectsPage = () => {
     return (
         <div>
             <Header />
-            <ProjectSidebar ></ProjectSidebar>
+            <ProjectSidebar />
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import SidebarWith from "./extras/buildProjectSidebar";
-
+import Footer from "../components/Footer"
 const items = [
   {
     companyName: "Stacauto",
@@ -285,16 +285,19 @@ const Root = styled.div`
 `;
 const MainCard = styled.div`
   width: auto;
-  padding-bottom: 225px;
+  padding-bottom: 150px;
 `;
 
 const ProjectSidebar = () => {
   return (
-    <Root>
-      <MainCard>
-        <SidebarWith companyDetails={items} />
-      </MainCard>
-    </Root>
+    <div>
+      <Root>
+        <MainCard>
+          <SidebarWith companyDetails={items} />
+        </MainCard>
+      </Root>
+      <Footer />
+    </div>
   );
 };
 

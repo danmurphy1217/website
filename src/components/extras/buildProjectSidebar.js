@@ -31,8 +31,7 @@ const useStyles = makeStyles((theme) => ({
   header: {
     paddingLeft: theme.spacing(2),
     color: "black",
-    fontWeight: "bold",
-    fontSize: "25px",
+    fontSize: "30px",
     paddingTop: "20%",
   },
 }));
