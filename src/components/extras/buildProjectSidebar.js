@@ -67,7 +67,6 @@ function SidebarWith({ companyDetails }) {
 
   const handleProjectClicked = (projectName) => {
     console.log(projectClicked[projectName]);
-    console.log("HANDLING PROJECT");
     console.log(projectName);
     setProjectClicked({ [projectName]: !projectClicked[projectName] });
   };
