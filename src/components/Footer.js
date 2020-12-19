@@ -33,14 +33,13 @@ const NavBarItems = {
 
 const Footer = () => {
     const classes = useStyles();
-
-    //  TODO : refactor
-    // const BottomNavActions = []
-    // NavBarItems.forEach( (item) => {
-    //     BottomNavActions.push(
-    //         <BottomNavigationAction/>
-    //     )
-    // })
+    const NavBarLabels = Object.keys(NavBarItems);
+    const BottomNavActions = []
+    NavBarLabels.forEach( (label) => {
+        BottomNavActions.push(
+            <BottomNavigationAction href={label.value} target="_blank" label={label} value={label.value} icon={label.icon}/>
+        )
+    })
 
     return (
         <BottomNavigation showLabels className= {classes.bottomNav}>
