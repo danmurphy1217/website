@@ -1,12 +1,12 @@
 import Header from "../components/Header";
 import Container from "../styles/Global"
 import Footer from "../components/Footer"
-
+import { Descriptors } from "../components/HomeMain";
 const ContactPage = () => {
     return (
       <Container>
         <Header />
-        <h2>CONTACT</h2>
+        <Descriptors plaintext="Get in Touch"/>
         <Footer />
       </Container>
     );
