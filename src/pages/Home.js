@@ -3,10 +3,11 @@ import { Descriptors } from "../components/HomeMain";
 import HomePageSupporters from "../components/HomeSecondary";
 import { formatOf } from "../components/extras/customFormatters";
 import Footer from "../components/Footer";
+import Container from "../styles/Global"
 
 const HomePage = () => {
   return (
-    <div>
+    <Container>
       <Header />
       <Descriptors
         plaintext="I AM A..."
@@ -23,7 +24,7 @@ const HomePage = () => {
       />
       <HomePageSupporters />
       <Footer/>
-    </div>
+    </Container>
   );
 };
 

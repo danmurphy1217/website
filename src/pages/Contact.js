@@ -1,11 +1,14 @@
 import Header from "../components/Header";
+import Container from "../styles/Global"
+import Footer from "../components/Footer"
 
 const ContactPage = () => {
     return (
-      <div>
+      <Container>
         <Header />
         <h2>CONTACT</h2>
-      </div>
+        <Footer />
+      </Container>
     );
   };
 

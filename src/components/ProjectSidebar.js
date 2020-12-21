@@ -290,14 +290,11 @@ const MainCard = styled.div`
 
 const ProjectSidebar = () => {
   return (
-    <div>
       <Root>
         <MainCard>
           <SidebarWith companyDetails={items} />
         </MainCard>
       </Root>
-      <Footer />
-    </div>
   );
 };
 

@@ -6,9 +6,11 @@ const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: auto;
+  width: 100%;
   justify-content: flex-end;
   background-color: #748592;
+  position: fixed;
+  top: 0px;
 `;
 
 const StyledLinkWrapper = styled.div`

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
     body {
@@ -26,3 +26,11 @@ export const Global = createGlobalStyle`
         box-sizing: inherit;
     }
 `;
+
+
+const Container = styled.div`
+    position: relative;
+    min-height: 100vh;
+`;
+
+export default Container;

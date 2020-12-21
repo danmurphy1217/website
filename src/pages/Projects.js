@@ -1,12 +1,16 @@
 import Header from "../components/Header";
 import ProjectSidebar from "../components/ProjectSidebar";
+import styled from 'styled-components';
+import Footer from "../components/Footer"
+import Container from "../styles/Global"
 
 const ProjectsPage = () => {
     return (
-        <div>
+        <Container>
             <Header />
             <ProjectSidebar />
-        </div>
+            <Footer/>
+        </Container>
     )
 }
 
