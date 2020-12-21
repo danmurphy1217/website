@@ -11,6 +11,7 @@ const HeaderWrapper = styled.div`
   background-color: #748592;
   position: fixed;
   top: 0px;
+  z-index: 999; // https://stackoverflow.com/questions/54849030/how-to-make-my-fixed-header-appear-in-front-of-the-body
 `;
 
 const StyledLinkWrapper = styled.div`
