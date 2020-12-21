@@ -25,6 +25,18 @@ export const Global = createGlobalStyle`
     *:after {
         box-sizing: inherit;
     }
+
+    .svg-transform {
+        transition: transform 0.5s ease-in;
+    }
+
+    .svg-transform:hover {
+        transform: rotate(360deg);
+    }
+
+    .svg-transform > g > text {
+        transition: fill 1s ease-in;
+    }
 `;
 
 

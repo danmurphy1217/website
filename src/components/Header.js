@@ -1,6 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import Logo from "./Logo";
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -28,10 +28,6 @@ const StyledLink = styled.a`
 const StyledLogo = styled.a`
   text-decoration: none;
   color: #c8c8c8;
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: underline;
-  text-decoration-color: #525252;
   padding: 15px 15px 15px 35px;
   margin-right: auto; // https://stackoverflow.com/questions/23621650/how-to-justify-a-single-flexbox-item-override-justify-content
 `;
@@ -53,17 +49,8 @@ const Header = () => {
     <HeaderWrapper>
       <StyledLogo
         href="/"
-        onMouseEnter={(e) => {
-          // TODO: create image and set rotation properties
-          e.target.style =
-            "text-decoration: underline;text-decoration-color: #525252; color: #C8C8C8";
-          // e.target.style = "-webkit-transform: rotate(180deg);"
-        }}
-        // onMouseLeave= { (e) => {
-        //   e.target.style = "-webkit-transform: rotate(0deg);"
-        // }}
       >
-        Dan Murphy
+        <Logo/>
       </StyledLogo>
       <StyledLinkWrapper>
         <StyledLink
