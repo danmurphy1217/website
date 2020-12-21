@@ -18,14 +18,14 @@ const StyledLinkWrapper = styled.div`
   padding-right: 35px;
 `;
 
-const StyledLink = styled(NavLink)`
+const StyledLink = styled.a`
   text-decoration: none;
   color: #525252;
   padding: 20px;
   font-weight: bold;
 `;
 
-const StyledLogo = styled(NavLink)`
+const StyledLogo = styled.a`
   text-decoration: none;
   color: #c8c8c8;
   font-size: 20px;
@@ -52,7 +52,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <StyledLogo
-        to="/"
+        href="/"
         onMouseEnter={(e) => {
           // TODO: create image and set rotation properties
           e.target.style =
@@ -67,7 +67,7 @@ const Header = () => {
       </StyledLogo>
       <StyledLinkWrapper>
         <StyledLink
-          to="/projects"
+          href="/projects"
           onMouseEnter={(e) => {
             navLinkStylesEnter(e);
           }}
@@ -78,7 +78,7 @@ const Header = () => {
           Projects
         </StyledLink>
         <StyledLink
-          to="/about"
+          href="/about"
           onMouseEnter={(e) => {
             navLinkStylesEnter(e);
           }}
@@ -89,7 +89,7 @@ const Header = () => {
           About
         </StyledLink>
         <StyledLink
-          to="/contact"
+          href="/contact"
           onMouseEnter={(e) => {
             navLinkStylesEnter(e);
           }}

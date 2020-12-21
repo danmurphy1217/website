@@ -7,7 +7,6 @@ import { Global } from "./styles/Global";
 
 function App() {
   return (
-    <div>
       <Router>
         <Global/>
         <Switch>
@@ -17,7 +16,6 @@ function App() {
           <Route exact path="/contact" component={ContactPage} />
         </Switch>
       </Router>
-    </div>
   );
 }
 
