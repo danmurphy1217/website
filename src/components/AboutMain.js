@@ -61,27 +61,7 @@ export default function AboutMain() {
       );
     }
   );
-
-  const ListGroupContentsFormatted = ListGroupItemsPlaintext.map(
-    (itemPlaintext) => {
-      const plaintextItems = ListGroupContentsPlaintext[itemPlaintext];
-      console.log(ListGroupContentsPlaintext[itemPlaintext]);
-      const listItems = plaintextItems.map((item) => {
-        return (
-          <Tab eventKey={item} title={item}>
-            {item}
-          </Tab>
-        );
-      });
-      return (
-        <Tab.Pane eventKey={`#${itemPlaintext}`}>
-          <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-            {listItems}
-          </Tabs>
-        </Tab.Pane>
-      );
-    }
-  );
+  
   return (
       <Row style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
         <Col sm={7}>
