@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Divider from "./extras/Divider";
 
 const SecondaryCard = styled.div`
   background-color: ${(props) => props.color || "#748592"};
@@ -22,7 +21,6 @@ const SupportingContentText = styled.p`
 const PageSupportingContent = (props) => {
   return (
     <SecondaryCard>
-      <Divider />
       <SupportingContentWrapper>
         {props.content}
       </SupportingContentWrapper>

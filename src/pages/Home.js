@@ -5,6 +5,7 @@ import {PageSupportingContent} from "../components/PageSupportingContent";
 import HomePageContent from "./contents/HomePageContents"
 import Footer from "../components/Footer";
 import Container from "../styles/Global";
+import Divider from "../components/extras/Divider";
 
 const HomePage = () => {
   return (
@@ -23,6 +24,7 @@ const HomePage = () => {
           loop: true,
         }}
       />
+      <Divider />
       <PageSupportingContent content={HomePageContent} />
       <Footer />
     </Container>
