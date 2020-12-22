@@ -9,13 +9,14 @@ const SupportingContentWrapper = styled.div`
   display: flex;
   background-color: #c8c8c8;
   justify-content: center;
+  padding-bottom: 10%;
 `;
 
 const SupportContentText = styled.p`
   padding-top: 2%;
   font-size: 24px;
   color: #525252;
-  width: 65%;
+  width: 50%;
 `;
 
 const HomePageSupporters = () => {

@@ -4,23 +4,21 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
 import Card from "react-bootstrap/Card";
-import { ListGroupItem } from "react-bootstrap";
 
-export default function ColorsTimeline() {
+export default function AboutMain() {
   const ListGroupItemsPlaintext = [
-    "Where I Was Born",
-    "Where I've Lived",
-    "High School",
-    "College",
+    "Personal Projects",
     "Places I've Visited",
     "Hobbies",
     "Favorite Books",
+    "Favorite Open Source Projects",
   ];
   const ListGroupContentsPlaintext = {
-    "Where I Was Born": ["Wilmington, DE"],
-    "Where I've Lived": ["Wilmington, DE", "Middletown, DE", "North East, MD"],
-    "High School": ["The Tatnall School"],
-    College: ["Davidson College"],
+    "Personal Projects": [
+      "Notion API Ruby Gem",
+      "Sentiment Analysis App",
+      "Open Source Contributions",
+    ],
     "Places I've Visited": [
       "Kfir Yasif, Israel",
       "San Francisco, CA",
@@ -33,16 +31,22 @@ export default function ColorsTimeline() {
       "The New Silk Roads: The Present and Future of the World",
       "The Everything Store",
     ],
+    "Favorite Open Source Projects": [
+      "The Algorithms: Python",
+      "GitHub CLI",
+      "Vagrant",
+      "Shopify API Ruby Gem",
+      "VSCode",
+      "Python Patterns",
+    ],
   };
 
   const DefaultKeyColors = {
-    "Where I Was Born": { background: "white", text: "#525252" },
-    "Where I've Lived": { background: "white", text: "#525252" },
-    "High School": { background: "white", text: "#525252" },
-    College: { background: "white", text: "#525252" },
+    "Personal Projects": { background: "white", text: "#525252" },
     "Places I've Visited": { background: "white", text: "#525252" },
     Hobbies: { background: "white", text: "#525252" },
     "Favorite Books": { background: "white", text: "#525252" },
+    "Favorite Open Source Projects": { background: "white", text: "#525252" },
   };
 
   const [color, setColor] = useState(DefaultKeyColors);
@@ -73,25 +77,32 @@ export default function ColorsTimeline() {
 
   const ListGroupContentsFormatted = ListGroupItemsPlaintext.map(
     (itemPlaintext) => {
+      const plaintextItems = ListGroupContentsPlaintext[itemPlaintext]
+      const listItems = plaintextItems.map( (item) => {
+        return <Card.Text>{item}</Card.Text>
+      })
       return (
         <Tab.Pane eventKey={`#${itemPlaintext}`}>
           <Card>
-            <Card.Header as="h5">&#127968;{ListGroupContentsPlaintext[itemPlaintext]}</Card.Header>
+          { listItems }
+            {/* <Card.Header as="h5"> */}
+              {/* {ListGroupContentsPlaintext[itemPlaintext]} */}
+            {/* </Card.Header> */}
           </Card>
         </Tab.Pane>
       );
     }
   );
   return (
-    <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
-      <Row>
-        <Col sm={4}>
-          <ListGroup>{ListGroupItemsFormatted}</ListGroup>
-        </Col>
-        <Col sm={8}>
-          <Tab.Content>{ListGroupContentsFormatted}</Tab.Content>
-        </Col>
-      </Row>
-    </Tab.Container>
+      <Tab.Container id="list-group-tabs-example">
+        <Row>
+          <Col sm={4}>
+            <ListGroup>{ListGroupItemsFormatted}</ListGroup>
+          </Col>
+          <Col sm={8}>
+            <Tab.Content>{ListGroupContentsFormatted}</Tab.Content>
+          </Col>
+        </Row>
+      </Tab.Container>
   );
 }
