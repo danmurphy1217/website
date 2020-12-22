@@ -20,6 +20,7 @@
     "react-responsive-carousel": "^3.2.11",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-three-fiber": "^5.3.10",
     "styled-components": "^5.2.1",
     "three-orbit-controls": "^82.1.0",
     "three.js": "^0.77.1",
