@@ -3,6 +3,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
 import Card from "react-bootstrap/Card";
 
 export default function AboutMain() {
@@ -54,55 +55,42 @@ export default function AboutMain() {
   const ListGroupItemsFormatted = ListGroupItemsPlaintext.map(
     (itemPlaintext) => {
       return (
-        <ListGroup.Item
-          action
-          key={itemPlaintext}
-          style={{
-            backgroundColor: `${color[itemPlaintext].background}`,
-            color: `${color[itemPlaintext].text}`,
-          }}
-          href={`#${itemPlaintext}`}
-          onClick={(e) => {
-            console.log(DefaultKeyColors);
-            DefaultKeyColors[e.target.textContent].background = "#525252";
-            DefaultKeyColors[e.target.textContent].text = "#C8C8C8";
-            setColor(DefaultKeyColors);
-          }}
-        >
-          {itemPlaintext}
-        </ListGroup.Item>
+        <Tab eventKey={itemPlaintext} title={itemPlaintext}>
+          {ListGroupContentsPlaintext[itemPlaintext]}
+        </Tab>
       );
     }
   );
 
   const ListGroupContentsFormatted = ListGroupItemsPlaintext.map(
     (itemPlaintext) => {
-      const plaintextItems = ListGroupContentsPlaintext[itemPlaintext]
-      const listItems = plaintextItems.map( (item) => {
-        return <Card.Text>{item}</Card.Text>
-      })
+      const plaintextItems = ListGroupContentsPlaintext[itemPlaintext];
+      console.log(ListGroupContentsPlaintext[itemPlaintext]);
+      const listItems = plaintextItems.map((item) => {
+        return (
+          <Tab eventKey={item} title={item}>
+            {item}
+          </Tab>
+        );
+      });
       return (
         <Tab.Pane eventKey={`#${itemPlaintext}`}>
-          <Card>
-          { listItems }
-            {/* <Card.Header as="h5"> */}
-              {/* {ListGroupContentsPlaintext[itemPlaintext]} */}
-            {/* </Card.Header> */}
-          </Card>
+          <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+            {listItems}
+          </Tabs>
         </Tab.Pane>
       );
     }
   );
   return (
-      <Tab.Container id="list-group-tabs-example">
-        <Row>
-          <Col sm={4}>
-            <ListGroup>{ListGroupItemsFormatted}</ListGroup>
-          </Col>
-          <Col sm={8}>
-            <Tab.Content>{ListGroupContentsFormatted}</Tab.Content>
-          </Col>
-        </Row>
-      </Tab.Container>
+      <Row style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+        <Col sm={7}>
+          <ListGroup>
+            <Tabs>
+              {ListGroupItemsFormatted}
+            </Tabs>
+            </ListGroup>
+        </Col>
+      </Row>
   );
 }
