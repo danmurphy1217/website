@@ -61,15 +61,13 @@ export default function AboutMain() {
       );
     }
   );
-  
+
   return (
       <Row style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
         <Col sm={7}>
-          <ListGroup>
             <Tabs>
               {ListGroupItemsFormatted}
             </Tabs>
-            </ListGroup>
         </Col>
       </Row>
   );
