@@ -64,7 +64,7 @@ export default function AboutMain() {
     (itemPlaintext) => {
       return (
         <Tab eventKey={itemPlaintext} title={itemPlaintext}>
-          <Table striped bordered hover variant="dark">
+          {/* <Table striped bordered hover variant="dark">
             <thead>
               <tr>
                 <th>#</th>
@@ -87,7 +87,7 @@ export default function AboutMain() {
                 <td>@fat</td>
               </tr>
             </tbody>
-          </Table>
+          </Table> */}
         </Tab>
       );
     }

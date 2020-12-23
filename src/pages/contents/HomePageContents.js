@@ -31,7 +31,7 @@ const HomePageContent = (
       }}
     >
       {" "}
-      personal projects
+      coding projects
     </a>
     . I'm passionate about contributing to Open Source Software, designing
     accessible and easy-to-use Interfaces, and building a more equitable
