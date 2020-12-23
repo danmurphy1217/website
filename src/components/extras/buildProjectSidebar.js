@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     color: "#5C5C5C",
     fontWeight: "bold",
-    fontSize: "20px",
+    fontSize: "20px"
   },
   nested: {
     paddingLeft: theme.spacing(4),

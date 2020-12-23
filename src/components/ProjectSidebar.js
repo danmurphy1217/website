@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import SidebarWith from "./extras/buildProjectSidebar";
-import Footer from "../components/Footer"
+
 const items = [
   {
     companyName: "Stacauto",
