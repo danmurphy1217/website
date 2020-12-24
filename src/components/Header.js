@@ -1,35 +1,20 @@
 import React from "react";
-import styled from "styled-components";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import InputBase from "@material-ui/core/InputBase";
+import { fade, makeStyles } from "@material-ui/core/styles";
+import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from "@material-ui/icons/Search";
 import Logo from "./Logo";
-
-const HeaderWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  justify-content: flex-end;
-  background-color: #748592;
-  position: fixed;
-  top: 0px;
-  z-index: 999; // https://stackoverflow.com/questions/54849030/how-to-make-my-fixed-header-appear-in-front-of-the-body
-`;
-
-const StyledLinkWrapper = styled.div`
-  padding-right: 35px;
-`;
+import styled from "styled-components";
 
 const StyledLink = styled.a`
   text-decoration: none;
   color: #525252;
   padding: 20px;
   font-weight: bold;
-`;
-
-const StyledLogo = styled.a`
-  text-decoration: none;
-  color: #c8c8c8;
-  padding: 15px 15px 15px 35px;
-  margin-right: auto; // https://stackoverflow.com/questions/23621650/how-to-justify-a-single-flexbox-item-override-justify-content
 `;
 
 const navLinkStylesEnter = (e) => {
@@ -44,51 +29,100 @@ const navLinkStylesLeave = (e) => {
   e.target.style.color = "#525252";
 };
 
-const Header = () => {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  logo: {
+    flexGrow: 1,
+    display: "none",
+    [theme.breakpoints.up("sm")]: {
+      display: "block"
+    },
+  },
+  siteNavitation: {
+    position: "relative",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    "&:hover": {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    marginLeft: 0,
+    width: "100%",
+    display: "table-cell",
+    textAlign: "center",
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(1),
+      width: "auto",
+    },
+  },
+  inputRoot: {
+    color: "inherit",
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      width: "12ch",
+      "&:focus": {
+        width: "20ch",
+      },
+    },
+  },
+}));
+
+const HeaderTwo = function SearchAppBar() {
+  const classes = useStyles();
+
   return (
-    <HeaderWrapper>
-      <StyledLogo
-        href="/"
-      >
-        <Logo/>
-      </StyledLogo>
-      <StyledLinkWrapper>
-        <StyledLink
-          href="/projects"
-          onMouseEnter={(e) => {
-            navLinkStylesEnter(e);
-          }}
-          onMouseLeave={(e) => {
-            navLinkStylesLeave(e);
-          }}
-        >
-          Projects
-        </StyledLink>
-        <StyledLink
-          href="/about"
-          onMouseEnter={(e) => {
-            navLinkStylesEnter(e);
-          }}
-          onMouseLeave={(e) => {
-            navLinkStylesLeave(e);
-          }}
-        >
-          About
-        </StyledLink>
-        <StyledLink
-          href="/contact"
-          onMouseEnter={(e) => {
-            navLinkStylesEnter(e);
-          }}
-          onMouseLeave={(e) => {
-            navLinkStylesLeave(e);
-          }}
-        >
-          Contact
-        </StyledLink>
-      </StyledLinkWrapper>
-    </HeaderWrapper>
+    <div className={classes.root}>
+      <AppBar position="fixed" style={{ backgroundColor: "#748592" }}>
+        <Toolbar>
+          <Typography className={classes.logo}>
+            <Logo />
+          </Typography>
+          <div className={classes.siteNavitation}>
+            <StyledLink
+              href="/projects"
+              onMouseEnter={(e) => {
+                navLinkStylesEnter(e);
+              }}
+              onMouseLeave={(e) => {
+                navLinkStylesLeave(e);
+              }}
+            >
+              Projects
+            </StyledLink>
+            <StyledLink
+              href="/about"
+              onMouseEnter={(e) => {
+                navLinkStylesEnter(e);
+              }}
+              onMouseLeave={(e) => {
+                navLinkStylesLeave(e);
+              }}
+            >
+              About
+            </StyledLink>
+            <StyledLink
+              href="/contact"
+              onMouseEnter={(e) => {
+                navLinkStylesEnter(e);
+              }}
+              onMouseLeave={(e) => {
+                navLinkStylesLeave(e);
+              }}
+            >
+              Contact
+            </StyledLink>
+          </div>
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 };
 
-export default Header;
+export default HeaderTwo;

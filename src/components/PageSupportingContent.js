@@ -8,7 +8,6 @@ const SupportingContentWrapper = styled.div`
   display: flex;
   background-color: #c8c8c8;
   justify-content: center;
-  padding-bottom: 10%;
 `;
 
 const SupportingContentText = styled.p`

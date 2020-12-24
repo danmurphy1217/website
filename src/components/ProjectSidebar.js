@@ -285,7 +285,6 @@ const Root = styled.div`
 `;
 const MainCard = styled.div`
   width: auto;
-  padding-bottom: 150px;
 `;
 
 const ProjectSidebar = () => {

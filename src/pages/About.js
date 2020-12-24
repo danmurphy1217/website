@@ -14,7 +14,7 @@ const AboutPage = () => {
       <Descriptors plaintext="ABOUT ME" />
       <Divider />
       <Divider color="#C8C8C8"/>
-      <PageSupportingContent content={AboutPageContent} />
+      <PageSupportingContent content={AboutPageContent()} />
       <AboutMain />
       <Footer />
     </Container>
