@@ -51,7 +51,7 @@ export default function AboutMain() {
   const ListGroupItemsFormatted = ListGroupItemsPlaintext.map(
     (itemPlaintext) => {
       return (
-        <Tab eventKey={itemPlaintext} title={itemPlaintext}>
+        <Tab eventKey={itemPlaintext} title={itemPlaintext} style={{textAlign: "center"}}>
             {formattingFor(ListGroupContentsPlaintext[itemPlaintext])}
         </Tab>
       );
