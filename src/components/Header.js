@@ -1,12 +1,8 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
-import SearchIcon from "@material-ui/icons/Search";
 import Logo from "./Logo";
 import styled from "styled-components";
 
@@ -55,23 +51,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(1),
       width: "auto",
     },
-  },
-  inputRoot: {
-    color: "inherit",
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
+  }
 }));
 
 const HeaderTwo = function SearchAppBar() {
@@ -108,7 +88,7 @@ const HeaderTwo = function SearchAppBar() {
               About
             </StyledLink>
             <StyledLink
-              href="/contact"
+              href="mailto:danielmurph8@gmail.com"
               onMouseEnter={(e) => {
                 navLinkStylesEnter(e);
               }}
