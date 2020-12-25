@@ -9,8 +9,7 @@ export const Global = createGlobalStyle`
 
 
     code {
-        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     }
   
 
@@ -39,10 +38,8 @@ export const Global = createGlobalStyle`
     }
 `;
 
-
 const Container = styled.div`
-    position: relative;
-    min-height: 100vh;
+  position: relative;
 `;
 
 export default Container;

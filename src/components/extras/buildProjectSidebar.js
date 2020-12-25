@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     color: "#5C5C5C",
     fontWeight: "bold",
-    fontSize: "20px"
+    fontSize: "20px",
   },
   nested: {
     paddingLeft: theme.spacing(4),
@@ -149,7 +149,7 @@ function SidebarWith({ companyDetails }) {
         if (projectClicked[project.label]) {
           const requirements = [];
           project.meta.projectRequirements.forEach((p) => {
-            requirements.push(<li >{p}</li>);
+            requirements.push(<li>{p}</li>);
           });
           const techStack = [];
           project.meta.techStack.forEach((p) => {

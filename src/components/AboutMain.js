@@ -13,20 +13,20 @@ const TabContainer = styled(Tabs)`
 
 export default function AboutMain() {
   const ListGroupItemsPlaintext = [
-    "Personal Projects",
-    "Places I've Visited",
+    "Projects",
+    "Travel",
     "Hobbies",
     "Favorite Books",
     "Resume"
   ];
   const ListGroupContentsPlaintext = {
-    "Personal Projects": [
+    Projects: [
       "Notion API Ruby Gem",
       "Sentiment Analysis App",
       "Open Source Contributions",
       "Portfolio Website",
     ],
-    "Places I've Visited": [
+    Travel: [
       "Kfir Yasif, Israel",
       "San Francisco, CA",
       "Denmark, Copenhagen",
@@ -41,29 +41,19 @@ export default function AboutMain() {
     Resume: ["LINK IT"]
   };
 
-  const ContentsFor = (items) => {
+  const formattingFor = (items) => {
     const contents = items.map((item) => {
       return <ul>{item}</ul>;
     });
     return contents;
   };
 
-  const DefaultKeyColors = {
-    "Personal Projects": { background: "white", text: "#525252" },
-    "Places I've Visited": { background: "white", text: "#525252" },
-    Hobbies: { background: "white", text: "#525252" },
-    "Favorite Books": { background: "white", text: "#525252" },
-    Resume: { background: "white", text: "#525252" }
-  };
-
-  const [color, setColor] = useState(DefaultKeyColors);
-
   const ListGroupItemsFormatted = ListGroupItemsPlaintext.map(
     (itemPlaintext) => {
       return (
         <Tab eventKey={itemPlaintext} title={itemPlaintext}>
           <div>
-            {ContentsFor(ListGroupContentsPlaintext[itemPlaintext])}
+            {formattingFor(ListGroupContentsPlaintext[itemPlaintext])}
           </div>
         </Tab>
       );
@@ -71,12 +61,8 @@ export default function AboutMain() {
   );
 
   return (
-    <Row
-      style={{
-        paddingBottom: "10%",
-      }}
-    >
-      <Col sm={12} style={{alignItems: "center"}}>
+    <Row>
+      <Col sm={9}>
         <TabContainer>{ListGroupItemsFormatted}</TabContainer>
       </Col>
     </Row>
