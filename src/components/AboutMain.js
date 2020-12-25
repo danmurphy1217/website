@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
@@ -52,19 +52,17 @@ export default function AboutMain() {
     (itemPlaintext) => {
       return (
         <Tab eventKey={itemPlaintext} title={itemPlaintext}>
-          <div>
             {formattingFor(ListGroupContentsPlaintext[itemPlaintext])}
-          </div>
         </Tab>
       );
     }
   );
 
   return (
-    <Row>
-      <Col sm={9}>
-        <TabContainer>{ListGroupItemsFormatted}</TabContainer>
-      </Col>
-    </Row>
+    <Container>
+        <Col>
+          <TabContainer fill>{ListGroupItemsFormatted}</TabContainer>
+        </Col>
+    </Container>
   );
 }
