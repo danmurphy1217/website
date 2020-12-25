@@ -65,6 +65,17 @@ const HeaderTwo = function SearchAppBar() {
             <Logo />
           </Typography>
           <div className={classes.siteNavitation}>
+          <StyledLink
+              href="/"
+              onMouseEnter={(e) => {
+                navLinkStylesEnter(e);
+              }}
+              onMouseLeave={(e) => {
+                navLinkStylesLeave(e);
+              }}
+            >
+              Home
+            </StyledLink>
             <StyledLink
               href="/projects"
               onMouseEnter={(e) => {
