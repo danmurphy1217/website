@@ -1,9 +1,10 @@
-import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import styled from "styled-components";
+import { useState } from "react";
 
 const TabContainer = styled(Tabs)`
   display: "flex";
@@ -12,38 +13,43 @@ const TabContainer = styled(Tabs)`
 `;
 
 export default function AboutMain() {
+
   const ListGroupItemsPlaintext = [
     "Projects",
     "Travel",
     "Hobbies",
-    "Favorite Books",
-    "Resume"
+    "Favorite Books"
   ];
   const ListGroupContentsPlaintext = {
     Projects: [
-      "Notion API Ruby Gem",
-      "Sentiment Analysis App",
-      "Open Source Contributions",
-      "Portfolio Website",
+      {Title:"Notion API Ruby Gem", Link:"https://github.com/danmurphy1217/notion-ruby"},
+      {Title:"Sentiment Analysis App", Link:"https://github.com/dylane1999/SentimentAnalysisApp"},
+      {Title:"Open Source Contributions", Link:"https://github.com/danmurphy1217"},
+      {Title:"Portfolio Website", Link:"https://github.com/danmurphy1217/website"},
     ],
     Travel: [
       "Kfir Yasif, Israel",
       "San Francisco, CA",
       "Denmark, Copenhagen",
     ],
-    Hobbies: ["Reading", "Coding", "Cooking"],
+    Hobbies: ["Reading", "Coding", "Cooking", "Writing"],
     "Favorite Books": [
       "Lord of the Flies",
       "Acting with Power",
       "The New Silk Roads: The Present and Future of the World",
       "The Everything Store",
-    ],
-    Resume: ["LINK IT"]
+    ]
   };
 
-  const formattingFor = (items) => {
+  const formattingFor = (items, itemsGroup) => {
+    console.log(itemsGroup);
     const contents = items.map((item) => {
-      return <ul>{item}</ul>;
+      switch(itemsGroup) {
+        case "Projects":
+          return <ul style={{minHeight: "35px"}}>{item.Title} <Button variant="dark" href={item.Link} target="_blank">Source Code</Button></ul>;
+        default:
+          return <ul style={{minHeight: "35px"}}>{item}</ul>;
+      }
     });
     return contents;
   };
@@ -52,7 +58,7 @@ export default function AboutMain() {
     (itemPlaintext) => {
       return (
         <Tab eventKey={itemPlaintext} title={itemPlaintext} style={{textAlign: "center"}}>
-            {formattingFor(ListGroupContentsPlaintext[itemPlaintext])}
+            {formattingFor(ListGroupContentsPlaintext[itemPlaintext], itemPlaintext)}
         </Tab>
       );
     }
