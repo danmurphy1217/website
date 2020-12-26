@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import {Header} from "../components/Header";
 import {PageSupportingContent} from "../components/PageSupportingContent";
 import AboutPageContent from "./contents/AboutPageContents"
 import { Descriptors } from "../components/HomeMain";

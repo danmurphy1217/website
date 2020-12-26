@@ -4,7 +4,8 @@ import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import styled from "styled-components";
-import { useState } from "react";
+
+// TODO: add "My Bookshelf" page
 
 const TabContainer = styled(Tabs)`
   display: "flex";
@@ -13,42 +14,56 @@ const TabContainer = styled(Tabs)`
 `;
 
 export default function AboutMain() {
-
   const ListGroupItemsPlaintext = [
     "Projects",
     "Travel",
     "Hobbies",
-    "Favorite Books"
+    "Favorite Books",
   ];
   const ListGroupContentsPlaintext = {
     Projects: [
-      {Title:"Notion API Ruby Gem", Link:"https://github.com/danmurphy1217/notion-ruby"},
-      {Title:"Sentiment Analysis App", Link:"https://github.com/dylane1999/SentimentAnalysisApp"},
-      {Title:"Open Source Contributions", Link:"https://github.com/danmurphy1217"},
-      {Title:"Portfolio Website", Link:"https://github.com/danmurphy1217/website"},
+      {
+        Title: "Notion API Ruby Gem",
+        Link: "https://github.com/danmurphy1217/notion-ruby",
+      },
+      {
+        Title: "Sentiment Analysis App",
+        Link: "https://github.com/dylane1999/SentimentAnalysisApp",
+      },
+      {
+        Title: "Open Source Contributions",
+        Link: "https://github.com/danmurphy1217",
+      },
+      {
+        Title: "Portfolio Website",
+        Link: "https://github.com/danmurphy1217/website",
+      },
     ],
-    Travel: [
-      "Kfir Yasif, Israel",
-      "San Francisco, CA",
-      "Denmark, Copenhagen",
-    ],
+    Travel: ["Kfir Yasif, Israel", "San Francisco, CA", "Denmark, Copenhagen"],
     Hobbies: ["Reading", "Coding", "Cooking", "Writing"],
     "Favorite Books": [
       "Lord of the Flies",
       "Acting with Power",
       "The New Silk Roads: The Present and Future of the World",
       "The Everything Store",
-    ]
+    ],
   };
 
   const formattingFor = (items, itemsGroup) => {
     console.log(itemsGroup);
     const contents = items.map((item) => {
-      switch(itemsGroup) {
+      switch (itemsGroup) {
         case "Projects":
-          return <ul style={{minHeight: "35px"}}>{item.Title} <Button variant="dark" href={item.Link} target="_blank">Source Code</Button></ul>;
+          return (
+            <li style={{ minHeight: "50px" }}>
+              {item.Title}{" "}
+              <Button variant="dark" href={item.Link} target="_blank">
+                Source Code
+              </Button>
+            </li>
+          );
         default:
-          return <ul style={{minHeight: "35px"}}>{item}</ul>;
+          return <li>{item}</li>;
       }
     });
     return contents;
@@ -57,8 +72,17 @@ export default function AboutMain() {
   const ListGroupItemsFormatted = ListGroupItemsPlaintext.map(
     (itemPlaintext) => {
       return (
-        <Tab eventKey={itemPlaintext} title={itemPlaintext} style={{textAlign: "center"}}>
-            {formattingFor(ListGroupContentsPlaintext[itemPlaintext], itemPlaintext)}
+        <Tab
+          eventKey={itemPlaintext}
+          title={itemPlaintext}
+          style={{ textAlign: "center" }}
+        >
+          <ul style={{display: "inline-block", textAlign: "left", listStyleType:"none"}}>
+            {formattingFor(
+              ListGroupContentsPlaintext[itemPlaintext],
+              itemPlaintext
+            )}
+          </ul>
         </Tab>
       );
     }
@@ -66,9 +90,9 @@ export default function AboutMain() {
 
   return (
     <Container>
-        <Col>
-          <TabContainer fill>{ListGroupItemsFormatted}</TabContainer>
-        </Col>
+      <Col>
+        <TabContainer fill>{ListGroupItemsFormatted}</TabContainer>
+      </Col>
     </Container>
   );
 }

@@ -13,11 +13,11 @@ const StyledLink = styled.a`
   font-weight: bold;
 `;
 
-const navLinkStylesEnter = (e) => {
-  e.target.style.textDecoration = "underline";
-  e.target.style.textDecorationThickness = "2px";
-  e.target.style.textDecorationColor = "#C8C8C8";
-  e.target.style.color = "#525252";
+const navLinkStylesEnter = (e, textDecor = "underline", textDecorThickness = "2px", textDecorColor = "#C8C8C8", textColor = "#525252") => {
+  e.target.style.textDecoration = textDecor;
+  e.target.style.textDecorationThickness = textDecorThickness;
+  e.target.style.textDecorationColor = textDecorColor;
+  e.target.style.color = textColor;
 };
 
 const navLinkStylesLeave = (e) => {
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display: "none",
     [theme.breakpoints.up("sm")]: {
-      display: "block"
+      display: "block",
     },
   },
   siteNavitation: {
@@ -51,10 +51,10 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(1),
       width: "auto",
     },
-  }
+  },
 }));
 
-const HeaderTwo = function SearchAppBar() {
+const Header = function SearchAppBar() {
   const classes = useStyles();
 
   return (
@@ -65,7 +65,7 @@ const HeaderTwo = function SearchAppBar() {
             <Logo />
           </Typography>
           <div className={classes.siteNavitation}>
-          <StyledLink
+            <StyledLink
               href="/"
               onMouseEnter={(e) => {
                 navLinkStylesEnter(e);
@@ -99,7 +99,7 @@ const HeaderTwo = function SearchAppBar() {
               About
             </StyledLink>
             <StyledLink
-              href="mailto:danielmurph8@gmail.com"
+              href="/bookshelf"
               onMouseEnter={(e) => {
                 navLinkStylesEnter(e);
               }}
@@ -107,7 +107,7 @@ const HeaderTwo = function SearchAppBar() {
                 navLinkStylesLeave(e);
               }}
             >
-              Contact
+              Bookshelf
             </StyledLink>
           </div>
         </Toolbar>
@@ -116,4 +116,4 @@ const HeaderTwo = function SearchAppBar() {
   );
 };
 
-export default HeaderTwo;
+export { Header, navLinkStylesEnter, navLinkStylesLeave, StyledLink };
