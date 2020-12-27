@@ -9,13 +9,11 @@ branches:
 cache:
   directories:
     - node_modules
-env:
-  - SKIP_PREFLIGHT_CHECK=true
 before_install:
   # TODO, must configure AWS
   # - yarn build && yarn deploy
-  - yarn upgrade
+  - npm upgrade
 install:
-  - yarn install
+  - npm i
 script:
-  - yarn test src/tests/Divider
+  - npm test -- src/tests/Divider
