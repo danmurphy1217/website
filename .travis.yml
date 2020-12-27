@@ -1,0 +1,17 @@
+sudo: false
+language: node_js
+node_js:
+  - "14.15"
+branches:
+  only:
+    - main
+    - /^add-.*$/
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm update
+install:
+  - npm install
+script:
+  - yarn test src/tests/Divider

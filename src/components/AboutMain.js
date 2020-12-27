@@ -55,7 +55,7 @@ export default function AboutMain() {
       switch (itemsGroup) {
         case "Projects":
           return (
-            <li style={{ minHeight: "50px" }}>
+            <li style={{ minHeight: "50px" }} key={item}>
               {item.Title}{" "}
               <Button variant="dark" href={item.Link} target="_blank">
                 Source Code
@@ -63,7 +63,7 @@ export default function AboutMain() {
             </li>
           );
         default:
-          return <li>{item}</li>;
+          return <li key={item}>{item}</li>;
       }
     });
     return contents;
@@ -77,7 +77,9 @@ export default function AboutMain() {
           title={itemPlaintext}
           style={{ textAlign: "center" }}
         >
-          <ul style={{display: "inline-block", textAlign: "left", listStyleType:"none"}}>
+          <ul 
+          style={{display: "inline-block", textAlign: "left", listStyleType:"none"}}
+          >
             {formattingFor(
               ListGroupContentsPlaintext[itemPlaintext],
               itemPlaintext
