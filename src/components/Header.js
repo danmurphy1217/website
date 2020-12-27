@@ -107,7 +107,7 @@ const Header = function SearchAppBar() {
                 navLinkStylesLeave(e);
               }}
             >
-              Bookshelf
+              Books
             </StyledLink>
           </div>
         </Toolbar>
