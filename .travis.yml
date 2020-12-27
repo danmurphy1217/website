@@ -9,6 +9,8 @@ branches:
 cache:
   directories:
     - node_modules
+env:
+  - SKIP_PREFLIGHT_CHECK=true
 before_install:
   - npm update
 install:
