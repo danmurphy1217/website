@@ -1,12 +1,8 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
-import SearchIcon from "@material-ui/icons/Search";
 import Logo from "./Logo";
 import styled from "styled-components";
 
@@ -17,11 +13,11 @@ const StyledLink = styled.a`
   font-weight: bold;
 `;
 
-const navLinkStylesEnter = (e) => {
-  e.target.style.textDecoration = "underline";
-  e.target.style.textDecorationThickness = "2px";
-  e.target.style.textDecorationColor = "#C8C8C8";
-  e.target.style.color = "#525252";
+const navLinkStylesEnter = (e, textDecor = "underline", textDecorThickness = "2px", textDecorColor = "#C8C8C8", textColor = "#525252") => {
+  e.target.style.textDecoration = textDecor;
+  e.target.style.textDecorationThickness = textDecorThickness;
+  e.target.style.textDecorationColor = textDecorColor;
+  e.target.style.color = textColor;
 };
 
 const navLinkStylesLeave = (e) => {
@@ -37,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display: "none",
     [theme.breakpoints.up("sm")]: {
-      display: "block"
+      display: "block",
     },
   },
   siteNavitation: {
@@ -56,25 +52,9 @@ const useStyles = makeStyles((theme) => ({
       width: "auto",
     },
   },
-  inputRoot: {
-    color: "inherit",
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
 }));
 
-const HeaderTwo = function SearchAppBar() {
+const Header = function SearchAppBar() {
   const classes = useStyles();
 
   return (
@@ -85,6 +65,17 @@ const HeaderTwo = function SearchAppBar() {
             <Logo />
           </Typography>
           <div className={classes.siteNavitation}>
+            <StyledLink
+              href="/"
+              onMouseEnter={(e) => {
+                navLinkStylesEnter(e);
+              }}
+              onMouseLeave={(e) => {
+                navLinkStylesLeave(e);
+              }}
+            >
+              Home
+            </StyledLink>
             <StyledLink
               href="/projects"
               onMouseEnter={(e) => {
@@ -108,7 +99,7 @@ const HeaderTwo = function SearchAppBar() {
               About
             </StyledLink>
             <StyledLink
-              href="/contact"
+              href="/bookshelf"
               onMouseEnter={(e) => {
                 navLinkStylesEnter(e);
               }}
@@ -116,7 +107,7 @@ const HeaderTwo = function SearchAppBar() {
                 navLinkStylesLeave(e);
               }}
             >
-              Contact
+              Bookshelf
             </StyledLink>
           </div>
         </Toolbar>
@@ -125,4 +116,4 @@ const HeaderTwo = function SearchAppBar() {
   );
 };
 
-export default HeaderTwo;
+export { Header, navLinkStylesEnter, navLinkStylesLeave, StyledLink };

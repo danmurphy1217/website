@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import {Header} from "../components/Header";
 import Container from "../styles/Global"
 import Footer from "../components/Footer"
 import { Descriptors } from "../components/HomeMain";

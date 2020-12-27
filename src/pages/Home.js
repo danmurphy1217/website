@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import {Header} from "../components/Header";
 import { Descriptors } from "../components/HomeMain";
 import { formatOf } from "../components/extras/customFormatters";
 import {PageSupportingContent} from "../components/PageSupportingContent";
