@@ -64,7 +64,7 @@ const AboutPageContent = () => {
       Ruby, and Javascript (Node.js and React). For all of my projects, I also
       write documentation and unit tests.
       <br />
-      <br /> Other than coding, I love to read (check out some of my favorites{" "}
+      <br /> Other than coding, I love to read (check out some of{" "}
       <a
         href="/bookshelf"
         rel="noreferrer"
@@ -77,10 +77,24 @@ const AboutPageContent = () => {
           navLinkStylesLeave(e, "none", "#748492");
         }}
       >
-        here
+        my favorites
       </a>
       ), cook, create music, and spend time with family. I grew up in
-      Wilmington, Delaware and go to Davidson College.
+      Wilmington, Delaware and go to Davidson College. You can view my resumé{" "}
+      <a
+        target="_blank"
+        href="https://s3.amazonaws.com/www.dan-murphy.com/public/Dan_Murphy_Resume.pdf"
+        rel="noreferrer"
+        className={classes.link}
+        onMouseEnter={(e) => {
+          navLinkStylesEnter(e, "underline", "2px", "#525252", "#748492");
+        }}
+        onMouseLeave={(e) => {
+          navLinkStylesLeave(e, "none", "#748492");
+        }}
+      >
+        here
+      </a>.
     </SupportingContentText>
   );
 };

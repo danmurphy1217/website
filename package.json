@@ -27,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync build/ s3://www.dan-murphy.com --acl public-read"
+    "deploy": "react-scripts build && aws s3 sync build/ s3://www.dan-murphy.com --acl public-read"
   },
   "eslintConfig": {
     "extends": [
