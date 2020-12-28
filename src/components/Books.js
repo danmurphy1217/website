@@ -1,11 +1,12 @@
 import Container from "react-bootstrap/Container";
-import { navLinkStylesEnter, navLinkStylesLeave, StyledLink } from "./Header";
+import { navLinkStylesEnter, navLinkStylesLeave } from "./Header";
 
 const BookItems = [
   {
     Title: "Lord of the Flies",
     Author: "William Golding",
-    Description: "This is the description for <book>",
+    Description:
+      "Tells a powerful story about the tension between our impulses as humans to follow the rules and act in the best interest of others or to satisfy our own immediate desires.",
     Src:
       "https://images-na.ssl-images-amazon.com/images/I/51eeAWItwbL._SX281_BO1,204,203,200_.jpg",
     Href:
@@ -14,7 +15,8 @@ const BookItems = [
   {
     Title: "Acting with Power",
     Author: "Deborah Gruenfeld",
-    Description: "This is the description for <book>",
+    Description:
+      "We all have more power than we are aware of, but it is often misused and misunderstood. This book teaches you when to use power, how to leverage it, and why it is so important for personal and professional growth.",
     Src:
       "https://images-na.ssl-images-amazon.com/images/I/41jbcxHKq7L._SX326_BO1,204,203,200_.jpg",
     Href:
@@ -23,7 +25,8 @@ const BookItems = [
   {
     Title: "The New Silk Roads: A New History of the World",
     Author: "Peter Frankopan",
-    Description: "This is the description for <book>",
+    Description:
+      "Provides a thorough analysis of the forces that have caused empires to succeed and fail and challenges many of the assumptions we hold about history.",
     Src:
       "https://images-na.ssl-images-amazon.com/images/I/61ZPM2PFJsL._SX329_BO1,204,203,200_.jpg",
     Href:
@@ -32,7 +35,8 @@ const BookItems = [
   {
     Title: "The Everything Store",
     Author: "Brad Stone",
-    Description: "This is the description for <book>",
+    Description:
+      "The incredible story behind the rise of Amazon, it's many acquisitions, AWS, and Jeff Bezos.",
     Src:
       "https://images-na.ssl-images-amazon.com/images/I/51BgKxKjkWL._SX331_BO1,204,203,200_.jpg",
     Href:
@@ -41,7 +45,8 @@ const BookItems = [
   {
     Title: "Animal Farm",
     Author: "George Orwell",
-    Description: "This is the description for <book>",
+    Description:
+      "A novel about farm animals who rebel against their human farmer, hoping to create a society where the animals can be equal and free. This represents Russia and the Soviet Union under Communist Party rule.",
     Src:
       "https://images-na.ssl-images-amazon.com/images/I/41NzDuSdIfL._SX277_BO1,204,203,200_.jpg",
     Href:
@@ -83,7 +88,7 @@ const Books = () => {
           >
             <h3 style={{ color: "#525252" }}>{book.Title}</h3>
           </a>
-          <h4 style={{ color: "#525252" }}>{book.Author}</h4>
+          <h5 style={{ color: "#525252" }}>{book.Author}</h5>
           <p>{book.Description}</p>
         </div>
       </div>

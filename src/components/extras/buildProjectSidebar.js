@@ -160,7 +160,7 @@ function SidebarWith({ companyDetails }) {
             problemsSolved.push(<li>{p}</li>);
           });
           return projectNameToDisplay.push(
-            <Jumbotron style={{ backgroundColor: "#C8C8C8", maxWidth: "65%" }}>
+            <Jumbotron style={{ backgroundColor: "#E6E6E6", maxWidth: "65%" }}>
               <h1>{project.label}</h1>
               <p>{project.meta.description}</p>
               <p>
@@ -214,7 +214,6 @@ function SidebarWith({ companyDetails }) {
         </Collapse>
         {companyFormattedComponents}
       </List>
-      {/* {companyNameToDisplay} */}
       {projectNameToDisplay}
     </div>
   );

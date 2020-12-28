@@ -6,7 +6,7 @@ const SecondaryCard = styled.div`
 
 const SupportingContentWrapper = styled.div`
   display: flex;
-  background-color: #c8c8c8;
+  background-color: #E6E6E6;
   justify-content: center;
 `;
 
