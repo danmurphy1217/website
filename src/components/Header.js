@@ -20,9 +20,9 @@ const navLinkStylesEnter = (e, textDecor = "underline", textDecorThickness = "2p
   e.target.style.color = textColor;
 };
 
-const navLinkStylesLeave = (e) => {
-  e.target.style.textDecoration = "none";
-  e.target.style.color = "#525252";
+const navLinkStylesLeave = (e, textDecor="none", textColor="#525252") => {
+  e.target.style.textDecoration = textDecor;
+  e.target.style.color = textColor;
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -107,7 +107,7 @@ const Header = function SearchAppBar() {
                 navLinkStylesLeave(e);
               }}
             >
-              Bookshelf
+              Books
             </StyledLink>
           </div>
         </Toolbar>

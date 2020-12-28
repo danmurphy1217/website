@@ -4,7 +4,7 @@ export const Global = createGlobalStyle`
     body {
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        background-color: #52525250;
+        background-color: #E6E6E6;
     }
 
 

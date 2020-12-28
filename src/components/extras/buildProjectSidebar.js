@@ -160,12 +160,17 @@ function SidebarWith({ companyDetails }) {
             problemsSolved.push(<li>{p}</li>);
           });
           return projectNameToDisplay.push(
-            <Jumbotron style={{ backgroundColor: "#C8C8C8", maxWidth: "65%" }}>
+            <Jumbotron style={{ backgroundColor: "#E6E6E6", maxWidth: "65%" }}>
               <h1>{project.label}</h1>
               <p>{project.meta.description}</p>
-              <p>
-                <Button variant="primary">Demo</Button>
-              </p>
+              <div style={{ display: "flex", width: "auto", flexDirection: "column", justifyContent: "space-between"}}>
+                  <p>
+                    <Button variant="dark">View Demo</Button>
+                  </p>
+                  <p>
+                    <Button variant="dark">Download Source Code</Button>
+                  </p>
+              </div>
               <Accordion>
                 <Card>
                   <Card.Header>
@@ -214,7 +219,6 @@ function SidebarWith({ companyDetails }) {
         </Collapse>
         {companyFormattedComponents}
       </List>
-      {/* {companyNameToDisplay} */}
       {projectNameToDisplay}
     </div>
   );

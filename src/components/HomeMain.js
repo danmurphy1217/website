@@ -2,10 +2,10 @@ import Typewriter from "typewriter-effect";
 import styled from "styled-components";
 
 const Root = styled.div`
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    background-color: #525252;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: #525252;
 `;
 
 const MainCard = styled.div`
@@ -20,16 +20,18 @@ const PlainText = styled.header`
 `;
 
 const Descriptors = (props) => {
-  const typewriter = props.config ? <Typewriter options={props.config}/> : null
+  const typewriter = props.config ? (
+    <Typewriter options={props.config} />
+  ) : null;
   return (
-      <Root>  
-        <MainCard>
-          <PlainText>
-            {props.plaintext}
-            {typewriter}
-          </PlainText>
-        </MainCard>
+    <Root>
+      <MainCard>
+        <PlainText>
+          {props.plaintext}
+          {typewriter}
+        </PlainText>
+      </MainCard>
     </Root>
   );
 };
-export { Descriptors, MainCard, PlainText};
+export { Descriptors, MainCard, PlainText };
