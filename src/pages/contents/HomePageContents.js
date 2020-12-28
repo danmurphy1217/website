@@ -14,7 +14,7 @@ const HomePageContent = (
       style={{
         color: "#748592",
         textDecoration: "underline",
-        textDecorationColor: "#C8C8C8",
+        textDecorationColor: "#E6E6E6",
         fontWeight: "bold",
       }}
       onMouseEnter={(e) => {
@@ -35,7 +35,7 @@ const HomePageContent = (
       style={{
         color: "#748592",
         textDecoration: "underline",
-        textDecorationColor: "#C8C8C8",
+        textDecorationColor: "#E6E6E6",
         fontWeight: "bold",
       }}
       onMouseEnter={(e) => {
@@ -60,7 +60,7 @@ const HomePageContent = (
       style={{
         color: "#748592",
         textDecoration: "underline",
-        textDecorationColor: "#C8C8C8",
+        textDecorationColor: "#E6E6E6",
         fontWeight: "bold",
       }}
       onMouseEnter={(e) => {
@@ -80,7 +80,7 @@ const HomePageContent = (
       style={{
         color: "#748592",
         textDecoration: "underline",
-        textDecorationColor: "#C8C8C8",
+        textDecorationColor: "#E6E6E6",
         fontWeight: "bold",
       }}
       onMouseEnter={(e) => {
