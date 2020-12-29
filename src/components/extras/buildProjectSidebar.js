@@ -163,13 +163,20 @@ function SidebarWith({ companyDetails }) {
             <Jumbotron style={{ backgroundColor: "#E6E6E6", maxWidth: "65%" }}>
               <h1>{project.label}</h1>
               <p>{project.meta.description}</p>
-              <div style={{ display: "flex", width: "auto", flexDirection: "column", justifyContent: "space-between"}}>
-                  <p>
-                    <Button variant="dark">View Demo</Button>
-                  </p>
-                  <p>
-                    <Button variant="dark">Download Source Code</Button>
-                  </p>
+              <div
+                style={{
+                  display: "flex",
+                  width: "auto",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                }}
+              >
+                <p>
+                  <Button variant="dark">View Demo</Button>
+                </p>
+                <p>
+                  <Button variant="dark">Download Source Code</Button>
+                </p>
               </div>
               <Accordion>
                 <Card>

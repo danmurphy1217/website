@@ -8,8 +8,9 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
     bottomNav: {
         backgroundColor: "#748592",
-        bottom: "0",
-        width: "100%",
+        width: '100%',
+        position: 'fixed',
+        bottom: 0
     }
 })
 

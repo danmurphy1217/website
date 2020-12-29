@@ -290,7 +290,7 @@ const MainCard = styled.div`
 
 const ProjectSidebar = () => {
   return (
-      <Root>
+      <Root style={{ marginBottom: "50px"}}>
         <MainCard>
           <SidebarWith companyDetails={items} />
         </MainCard>

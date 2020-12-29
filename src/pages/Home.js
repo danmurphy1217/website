@@ -9,25 +9,27 @@ import Divider from "../components/extras/Divider";
 
 const HomePage = () => {
   return (
-    <Container>
-      <Header />
-      <Descriptors
-        plaintext="I AM A..."
-        config={{
-          strings: [
-            `${formatOf("ENGINEER")}`,
-            `${formatOf("STUDENT")}`,
-            `${formatOf("MUSICIAN")}`,
-            `${formatOf("WRITER")}`,
-          ],
-          autoStart: true,
-          loop: true,
-        }}
-      />
-      <Divider />
-      <PageSupportingContent content={HomePageContent} />
+    <body>
+      <Container>
+          <Header />
+          <Descriptors
+            plaintext="I AM A..."
+            config={{
+              strings: [
+                `${formatOf("ENGINEER")}`,
+                `${formatOf("STUDENT")}`,
+                `${formatOf("MUSICIAN")}`,
+                `${formatOf("WRITER")}`,
+              ],
+              autoStart: true,
+              loop: true,
+            }}
+          />
+          <Divider />
+          <PageSupportingContent content={HomePageContent} />
+      </Container>
       <Footer />
-    </Container>
+    </body>
   );
 };
 
