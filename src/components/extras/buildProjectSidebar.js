@@ -31,7 +31,25 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(2),
     color: "black",
     fontSize: "30px",
-    paddingTop: "20%",
+    marginTop: "10%",
+    [theme.breakpoints.up("md")]: {
+      marginTop: "20%",
+    },
+  },
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+      flexDirection: "row",
+    },
+  },
+  projectDetails: {
+    backgroundColor: "#E6E6E6",
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      maxWidth: "65%"
+    },
   },
 }));
 
@@ -147,7 +165,7 @@ function SidebarWith({ companyDetails }) {
             problemsSolved.push(<li>{p}</li>);
           });
           return projectNameToDisplay.push(
-            <Jumbotron style={{ backgroundColor: "#E6E6E6", maxWidth: "65%" }}>
+            <Jumbotron className={classes.projectDetails}>
               <h1>{project.label}</h1>
               <p>{project.meta.description}</p>
               <div
@@ -168,17 +186,27 @@ function SidebarWith({ companyDetails }) {
               <Accordion>
                 <Card>
                   <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey={uniqueProjectKey + "requirements"}>
+                    <Accordion.Toggle
+                      as={Button}
+                      variant="link"
+                      eventKey={uniqueProjectKey + "requirements"}
+                    >
                       Project Requirements
                     </Accordion.Toggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey={uniqueProjectKey + "requirements"}>
+                  <Accordion.Collapse
+                    eventKey={uniqueProjectKey + "requirements"}
+                  >
                     <Card.Body>{requirements}</Card.Body>
                   </Accordion.Collapse>
                 </Card>
                 <Card>
                   <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey={uniqueProjectKey + "tech"}>
+                    <Accordion.Toggle
+                      as={Button}
+                      variant="link"
+                      eventKey={uniqueProjectKey + "tech"}
+                    >
                       Tech Stack Used
                     </Accordion.Toggle>
                   </Card.Header>
@@ -188,7 +216,11 @@ function SidebarWith({ companyDetails }) {
                 </Card>
                 <Card>
                   <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey={uniqueProjectKey + "outcome"}>
+                    <Accordion.Toggle
+                      as={Button}
+                      variant="link"
+                      eventKey={uniqueProjectKey + "outcome"}
+                    >
                       Outcomes
                     </Accordion.Toggle>
                   </Card.Header>
@@ -205,7 +237,7 @@ function SidebarWith({ companyDetails }) {
   });
 
   return (
-    <div style={{ display: "flex" }}>
+    <div className={classes.container}>
       <List>
         <h1 className={classes.header}>Professional Projects</h1>
         {companyFormattedComponents}
