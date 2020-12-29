@@ -13,7 +13,7 @@ const BookPage = () => {
         plaintext="My Bookshelf"
       />
       <Divider />
-      <Books />
+      <Books/>
       <Footer />
     </Container>
   );
