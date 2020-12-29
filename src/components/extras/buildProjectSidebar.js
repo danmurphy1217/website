@@ -129,15 +129,6 @@ function SidebarWith({ companyDetails }) {
     );
   });
 
-  const companyNameToDisplay = [];
-  companyNames.forEach((name) => {
-    return open[name]
-      ? companyNameToDisplay.push(
-          <h2 style={{ fontSize: "60px" }}> {name} was opened</h2>
-        )
-      : null;
-  });
-
   const projectNameToDisplay = [];
   companyNames.forEach((name) => {
     if (open[name]) {
@@ -221,9 +212,6 @@ function SidebarWith({ companyDetails }) {
     <div style={{ display: "flex" }}>
       <List>
         <h1 className={classes.header}>Professional Projects</h1>
-        <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding></List>
-        </Collapse>
         {companyFormattedComponents}
       </List>
       {projectNameToDisplay}
