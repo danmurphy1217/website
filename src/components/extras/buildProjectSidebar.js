@@ -44,11 +44,15 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "row",
     },
   },
+  projectDetailsContainer: {
+    display: "flex",
+    justifyContent: "center",
+  },
   projectDetails: {
     backgroundColor: "#E6E6E6",
     width: "100%",
     [theme.breakpoints.up("md")]: {
-      maxWidth: "65%"
+      maxWidth: "65%",
     },
   },
 }));
@@ -165,71 +169,73 @@ function SidebarWith({ companyDetails }) {
             problemsSolved.push(<li>{p}</li>);
           });
           return projectNameToDisplay.push(
-            <Jumbotron className={classes.projectDetails}>
-              <h1>{project.label}</h1>
-              <p>{project.meta.description}</p>
-              <div
-                style={{
-                  display: "flex",
-                  width: "auto",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                }}
-              >
-                <p>
-                  <Button variant="dark">View Demo</Button>
-                </p>
-                <p>
-                  <Button variant="dark">Download Source Code</Button>
-                </p>
-              </div>
-              <Accordion>
-                <Card>
-                  <Card.Header>
-                    <Accordion.Toggle
-                      as={Button}
-                      variant="link"
+            <div className={classes.projectDetailsContainer}>
+              <Jumbotron className={classes.projectDetails}>
+                <h1>{project.label}</h1>
+                <p>{project.meta.description}</p>
+                <div
+                  style={{
+                    display: "flex",
+                    width: "auto",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <p>
+                    <Button variant="dark">View Demo</Button>
+                  </p>
+                  <p>
+                    <Button variant="dark">Download Source Code</Button>
+                  </p>
+                </div>
+                <Accordion>
+                  <Card>
+                    <Card.Header>
+                      <Accordion.Toggle
+                        as={Button}
+                        variant="link"
+                        eventKey={uniqueProjectKey + "requirements"}
+                      >
+                        Project Requirements
+                      </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse
                       eventKey={uniqueProjectKey + "requirements"}
                     >
-                      Project Requirements
-                    </Accordion.Toggle>
-                  </Card.Header>
-                  <Accordion.Collapse
-                    eventKey={uniqueProjectKey + "requirements"}
-                  >
-                    <Card.Body>{requirements}</Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-                <Card>
-                  <Card.Header>
-                    <Accordion.Toggle
-                      as={Button}
-                      variant="link"
-                      eventKey={uniqueProjectKey + "tech"}
-                    >
-                      Tech Stack Used
-                    </Accordion.Toggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey={uniqueProjectKey + "tech"}>
-                    <Card.Body>{techStack}</Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-                <Card>
-                  <Card.Header>
-                    <Accordion.Toggle
-                      as={Button}
-                      variant="link"
-                      eventKey={uniqueProjectKey + "outcome"}
-                    >
-                      Outcomes
-                    </Accordion.Toggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey={uniqueProjectKey + "outcome"}>
-                    <Card.Body>{problemsSolved}</Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-              </Accordion>
-            </Jumbotron>
+                      <Card.Body>{requirements}</Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Card.Header>
+                      <Accordion.Toggle
+                        as={Button}
+                        variant="link"
+                        eventKey={uniqueProjectKey + "tech"}
+                      >
+                        Tech Stack Used
+                      </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey={uniqueProjectKey + "tech"}>
+                      <Card.Body>{techStack}</Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Card.Header>
+                      <Accordion.Toggle
+                        as={Button}
+                        variant="link"
+                        eventKey={uniqueProjectKey + "outcome"}
+                      >
+                        Outcomes
+                      </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey={uniqueProjectKey + "outcome"}>
+                      <Card.Body>{problemsSolved}</Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                </Accordion>
+              </Jumbotron>
+            </div>
           );
         }
       });
