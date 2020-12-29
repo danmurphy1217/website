@@ -61,13 +61,10 @@ function SidebarWith({ companyDetails }) {
   });
 
   const handleCompanyOpen = (companyName) => {
-    console.log(open[companyName]);
     setOpen({ [companyName]: !open[companyName] });
   };
 
   const handleProjectClicked = (projectName) => {
-    console.log(projectClicked[projectName]);
-    console.log(projectName);
     setProjectClicked({ [projectName]: !projectClicked[projectName] });
   };
 
@@ -134,8 +131,7 @@ function SidebarWith({ companyDetails }) {
     if (open[name]) {
       let companyProjects = projectDetails[name];
       companyProjects.forEach((project) => {
-        console.log(projectClicked[project.label]);
-        console.log(project);
+        const uniqueProjectKey = name + project.slug;
 
         if (projectClicked[project.label]) {
           const requirements = [];
@@ -172,31 +168,31 @@ function SidebarWith({ companyDetails }) {
               <Accordion>
                 <Card>
                   <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                    <Accordion.Toggle as={Button} variant="link" eventKey={uniqueProjectKey + "requirements"}>
                       Project Requirements
                     </Accordion.Toggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey="0">
+                  <Accordion.Collapse eventKey={uniqueProjectKey + "requirements"}>
                     <Card.Body>{requirements}</Card.Body>
                   </Accordion.Collapse>
                 </Card>
                 <Card>
                   <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                    <Accordion.Toggle as={Button} variant="link" eventKey={uniqueProjectKey + "tech"}>
                       Tech Stack Used
                     </Accordion.Toggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey="1">
+                  <Accordion.Collapse eventKey={uniqueProjectKey + "tech"}>
                     <Card.Body>{techStack}</Card.Body>
                   </Accordion.Collapse>
                 </Card>
                 <Card>
                   <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="2">
+                    <Accordion.Toggle as={Button} variant="link" eventKey={uniqueProjectKey + "outcome"}>
                       Outcomes
                     </Accordion.Toggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey="2">
+                  <Accordion.Collapse eventKey={uniqueProjectKey + "outcome"}>
                     <Card.Body>{problemsSolved}</Card.Body>
                   </Accordion.Collapse>
                 </Card>
