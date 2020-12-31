@@ -37,6 +37,7 @@ const items = [
             "Learned about popular forms of authentication, specifically OAuth2 and JWT",
             "Configured Sentry for Django",
           ],
+          video: "https://s3.amazonaws.com/www.dan-murphy.com/public/Stac-API-Demo.mov"
         },
       },
       {
@@ -61,6 +62,7 @@ const items = [
             "Diagrammed and built a production-ready database",
             "Set up and managed a database with RDS",
           ],
+          image: "https://s3.amazonaws.com/www.dan-murphy.com/public/db-schema-inventory.png"
         },
       },
       {
@@ -86,6 +88,7 @@ const items = [
             "Set up continuous integration between GitHub and AWS S3",
             "Configured Sentry for Ruby 2.7",
           ],
+          image: ""
         },
       },
       {
@@ -111,6 +114,7 @@ const items = [
             "Stored Secret values in AWS Secrets Manager and allowed AWS Lambda to pull from AWS Secrets",
             "Configured Public-private keys for access to the SFTP server",
           ],
+          image: ""
         },
       },
     ],
@@ -191,6 +195,7 @@ const items = [
             "Built an intuitive application interface that users understand and enjoy using",
             "Decreased the time taken for market research from hours to minutes.",
           ],
+          video: "https://s3.amazonaws.com/www.dan-murphy.com/public/WL-Demo.mov"
         },
       },
     ],
@@ -222,6 +227,7 @@ const items = [
             "Utilized CRON to automatically run tasks at specified times",
             "Setup Shiny Server with Nginx",
           ],
+          video: "https://s3.amazonaws.com/www.dan-murphy.com/public/JamGraph.mp4"
         },
       },
       {
@@ -239,6 +245,7 @@ const items = [
             "Setup continuous integration with Gitlab",
             "Utilized dataclasses to store data in a Pythonic manner",
           ],
+          image: ""
         },
       },
     ],
@@ -272,6 +279,7 @@ const items = [
             "Built a PDF with Python",
             "Provided respondents with data-driven insights",
           ],
+          image: "https://s3.amazonaws.com/www.dan-murphy.com/public/WSE_Flow.png"
         },
       },
     ],

@@ -11,6 +11,8 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ReactPlayer from "react-player";
+import Popup from "reactjs-popup";
 
 const useStyles = makeStyles((theme) => ({
   // ! useful for overiding material ui default typography
@@ -55,6 +57,21 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: "65%",
     },
   },
+
+  videoBtn: {
+    display: "none",
+    [theme.breakpoints.up("md")]: {
+      display: "inline-block",
+    },
+  },
+
+  videoWarningDisplay: {
+    display: "flex",
+    color: "red",
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+  },
 }));
 
 function SidebarWith({ companyDetails }) {
@@ -72,6 +89,7 @@ function SidebarWith({ companyDetails }) {
     Jam: false,
     "Wilbur Labs": false,
   });
+  const [popupOpen, setPopupOpen] = useState(false);
   const [projectClicked, setProjectClicked] = useState(initialProjectState);
 
   const companyNames = companyDetails.map((company) => {
@@ -88,6 +106,56 @@ function SidebarWith({ companyDetails }) {
 
   const handleProjectClicked = (projectName) => {
     setProjectClicked({ [projectName]: !projectClicked[projectName] });
+  };
+
+  const displayDemoInfoFor = (project) => {
+    if (project.meta.image || project.meta.video) {
+      if (project.meta.image) {
+        return (
+          <div>
+            <Button
+              target="_blank"
+              href={project.meta.image}
+              variant="dark"
+            >
+              View Data Diagram
+            </Button>
+          </div>
+        );
+      } else {
+        return (
+          <div>
+            <Popup
+              trigger={
+                <Button
+                  onClick={() => {
+                    setPopupOpen(!popupOpen);
+                  }}
+                  variant="dark"
+                  className={classes.videoBtn}
+                >
+                  View Demo
+                </Button>
+              }
+              className={classes.videoBtn}
+              position="center"
+            >
+              <ReactPlayer
+                url={project.meta.video}
+                playing={true}
+                loop={false}
+                height="550px"
+                width="750px"
+                className={classes.videoBtn}
+              />
+            </Popup>
+            <p className={classes.videoWarningDisplay}>
+              Enter Full Screen to view demo.
+            </p>
+          </div>
+        );
+      }
+    }
   };
 
   const companyFormattedComponents = [];
@@ -181,12 +249,35 @@ function SidebarWith({ companyDetails }) {
                     justifyContent: "space-between",
                   }}
                 >
-                  <p>
-                    <Button variant="dark">View Demo</Button>
-                  </p>
-                  <p>
-                    <Button variant="dark">Download Source Code</Button>
-                  </p>
+                  {displayDemoInfoFor(project)}
+                  {/* <Popup
+                      trigger={
+                        <Button
+                          onClick={() => {
+                            setPopupOpen(!popupOpen);
+                          }}
+                          variant="dark"
+                          className={classes.videoBtn}
+                        >
+                          View Demo
+                        </Button>
+                      }
+                      className={classes.videoBtn}
+                      position="center"
+                    >
+                      <ReactPlayer
+                        url={project.meta.video}
+                        playing={true}
+                        loop={false}
+                        height="550px"
+                        width="750px"
+                        className={classes.videoBtn}
+                      />
+                    </Popup>
+                    <p className={classes.videoWarningDisplay}>
+                      Enter Full Screen to view demo.
+                    </p> */}
+                  <br />
                 </div>
                 <Accordion>
                   <Card>
