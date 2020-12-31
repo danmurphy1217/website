@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { Descriptors } from "../components/HomeMain";
 import Container from "../styles/Global";
 import Divider from "../components/extras/Divider"
+import BookItems from "./data/BookItems";
 
 const BookPage = () => {
   return (
@@ -13,7 +14,7 @@ const BookPage = () => {
         plaintext="My Bookshelf"
       />
       <Divider />
-      <Books/>
+      <Books books={BookItems}/>
       <Footer />
     </Container>
   );
