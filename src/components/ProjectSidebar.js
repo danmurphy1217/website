@@ -88,7 +88,7 @@ const items = [
             "Set up continuous integration between GitHub and AWS S3",
             "Configured Sentry for Ruby 2.7",
           ],
-          image: ""
+          image: "https://s3.amazonaws.com/www.dan-murphy.com/public/Shopify+Live+Inventory.png"
         },
       },
       {
@@ -114,7 +114,7 @@ const items = [
             "Stored Secret values in AWS Secrets Manager and allowed AWS Lambda to pull from AWS Secrets",
             "Configured Public-private keys for access to the SFTP server",
           ],
-          image: ""
+          image: "https://s3.amazonaws.com/www.dan-murphy.com/public/Vendor+Integrations.png"
         },
       },
     ],
@@ -245,7 +245,7 @@ const items = [
             "Setup continuous integration with Gitlab",
             "Utilized dataclasses to store data in a Pythonic manner",
           ],
-          image: ""
+          image: "https://s3.amazonaws.com/www.dan-murphy.com/public/JAM_+Match+Algorithm.png"
         },
       },
     ],
@@ -279,7 +279,7 @@ const items = [
             "Built a PDF with Python",
             "Provided respondents with data-driven insights",
           ],
-          image: "https://s3.amazonaws.com/www.dan-murphy.com/public/WSE_Flow.png"
+          image: "https://s3.amazonaws.com/www.dan-murphy.com/public/WSE+Flow.png"
         },
       },
     ],

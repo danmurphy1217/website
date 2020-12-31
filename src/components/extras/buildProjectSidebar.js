@@ -144,8 +144,8 @@ function SidebarWith({ companyDetails }) {
                 url={project.meta.video}
                 playing={true}
                 loop={false}
-                height="550px"
-                width="750px"
+                height="40%"
+                width="55%"
                 className={classes.videoBtn}
               />
             </Popup>
@@ -250,33 +250,6 @@ function SidebarWith({ companyDetails }) {
                   }}
                 >
                   {displayDemoInfoFor(project)}
-                  {/* <Popup
-                      trigger={
-                        <Button
-                          onClick={() => {
-                            setPopupOpen(!popupOpen);
-                          }}
-                          variant="dark"
-                          className={classes.videoBtn}
-                        >
-                          View Demo
-                        </Button>
-                      }
-                      className={classes.videoBtn}
-                      position="center"
-                    >
-                      <ReactPlayer
-                        url={project.meta.video}
-                        playing={true}
-                        loop={false}
-                        height="550px"
-                        width="750px"
-                        className={classes.videoBtn}
-                      />
-                    </Popup>
-                    <p className={classes.videoWarningDisplay}>
-                      Enter Full Screen to view demo.
-                    </p> */}
                   <br />
                 </div>
                 <Accordion>
