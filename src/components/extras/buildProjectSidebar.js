@@ -144,8 +144,8 @@ function SidebarWith({ companyDetails }) {
                 url={project.meta.video}
                 playing={true}
                 loop={false}
-                height="550px"
-                width="750px"
+                height="40%"
+                width="55%"
                 className={classes.videoBtn}
               />
             </Popup>
