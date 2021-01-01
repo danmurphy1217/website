@@ -177,7 +177,7 @@ function SidebarWith({ companyDetails }) {
           <List>
             {company.projects.map((project) => {
               return (
-                <div>
+                <div key={Math.random().toString(36)}>
                   <Collapse
                     in={open[company.companyName]}
                     timeout="auto"
