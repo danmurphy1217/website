@@ -43,7 +43,9 @@ const Books = (props) => {
     );
   });
 
-  return <Container style={{ marginBottom: "50px"}}>{FormattedBooks}</Container>;
+  return (
+    <Container style={{ marginBottom: "50px" }}>{FormattedBooks}</Container>
+  );
 };
 
 export default Books;
