@@ -16,4 +16,4 @@ before_install:
 install:
   - npm i
 script:
-  - npm test -- src/tests/HomeMain.test.js src/tests/Divider.test.js src/tests/Books.test.js
+  - npm test src
