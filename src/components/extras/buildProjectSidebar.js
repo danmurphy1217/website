@@ -11,8 +11,6 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ReactPlayer from "react-player";
-import Popup from "reactjs-popup";
 
 const useStyles = makeStyles((theme) => ({
   // ! useful for overiding material ui default typography
@@ -89,7 +87,6 @@ function SidebarWith({ companyDetails }) {
     Jam: false,
     "Wilbur Labs": false,
   });
-  const [popupOpen, setPopupOpen] = useState(false);
   const [projectClicked, setProjectClicked] = useState(initialProjectState);
 
   const companyNames = companyDetails.map((company) => {
@@ -113,11 +110,7 @@ function SidebarWith({ companyDetails }) {
       if (project.meta.image) {
         return (
           <div>
-            <Button
-              target="_blank"
-              href={project.meta.image}
-              variant="dark"
-            >
+            <Button target="_blank" href={project.meta.image} variant="dark">
               View Data Diagram
             </Button>
           </div>
@@ -125,33 +118,9 @@ function SidebarWith({ companyDetails }) {
       } else {
         return (
           <div>
-            <Popup
-              trigger={
-                <Button
-                  onClick={() => {
-                    setPopupOpen(!popupOpen);
-                  }}
-                  variant="dark"
-                  className={classes.videoBtn}
-                >
-                  View Demo
-                </Button>
-              }
-              className={classes.videoBtn}
-              position="center"
-            >
-              <ReactPlayer
-                url={project.meta.video}
-                playing={true}
-                loop={false}
-                height="40%"
-                width="55%"
-                className={classes.videoBtn}
-              />
-            </Popup>
-            <p className={classes.videoWarningDisplay}>
-              Enter Full Screen to view demo.
-            </p>
+            <Button target="_blank" href={project.meta.video} variant="dark">
+              View Demo
+            </Button>
           </div>
         );
       }
