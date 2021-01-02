@@ -41,6 +41,7 @@ export const Global = createGlobalStyle`
             animation: shake 0.5s;
             animation-iteration-count: 1;
           }
+
           
     @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }

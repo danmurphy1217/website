@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display: "none",
     [theme.breakpoints.up("sm")]: {
-      display: "block",
+      display: "block"
     },
   },
   siteNavitation: {

@@ -7,9 +7,9 @@ export default function Logo() {
         viewBox="0 0 142 29"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        class="svg-transform"
+        class="logo"
       >
-        <title>Website Dan Murphy Logo</title>
+        <title>Dan Murphy Website Logo</title>
         <g
           id="Page-1"
           stroke="none"
