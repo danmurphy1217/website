@@ -1,5 +1,6 @@
 import { SupportingContentText } from "../../components/PageSupportingContent";
 import { makeStyles } from "@material-ui/core/styles";
+
 import {
   navLinkStylesEnter,
   navLinkStylesLeave,
@@ -94,7 +95,8 @@ const AboutPageContent = () => {
         }}
       >
         here
-      </a>.
+      </a>
+      .
     </SupportingContentText>
   );
 };
