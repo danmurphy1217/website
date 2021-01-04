@@ -37,7 +37,7 @@ const items = [
             "Learned about popular forms of authentication, specifically OAuth2 and JWT",
             "Configured Sentry for Django",
           ],
-          video: "https://s3.amazonaws.com/www.dan-murphy.com/public/Stac-API-Demo.mov"
+          video: "https://s3.amazonaws.com/www.dan-murphy.com/public/Stac-API-Demo.mp4"
         },
       },
       {
@@ -195,7 +195,7 @@ const items = [
             "Built an intuitive application interface that users understand and enjoy using",
             "Decreased the time taken for market research from hours to minutes.",
           ],
-          video: "https://s3.amazonaws.com/www.dan-murphy.com/public/WL-Demo.mov"
+          video: "https://s3.amazonaws.com/www.dan-murphy.com/public/WL-Demo.mp4"
         },
       },
     ],
