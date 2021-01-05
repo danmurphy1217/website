@@ -1,14 +1,26 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
 import ProjectsPage from "./pages/Projects";
 import BookPage from "./pages/Bookshelf";
 import { Global } from "./styles/Global";
+import ReactGA from "react-ga";
+import { createBrowserHistory } from "history";
+
+
+const history = createBrowserHistory();
+const trackingId = "UA-168791471-2";
+ReactGA.initialize(trackingId);
+
+history.listen(function(location) {
+  ReactGA.set({ page: location.pathname });
+  ReactGA.pageview(location.pageview);
+})
 
 
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <Global />
       <Switch>
         <Route exact path="/" component={HomePage} />
