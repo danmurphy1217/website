@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Divider from "../components/extras/Divider";
 import Container from "../styles/Global";
 
+
 const AboutPage = () => {
   return (
     <Container>

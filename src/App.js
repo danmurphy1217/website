@@ -10,7 +10,12 @@ import { createBrowserHistory } from "history";
 
 const history = createBrowserHistory();
 const trackingId = "UA-168791471-2";
-ReactGA.initialize(trackingId);
+ReactGA.initialize(trackingId, {
+  debug: true,
+  titleCase: false,
+  siteSpeedSampleRate: 100
+});
+
 
 history.listen(function(location) {
   ReactGA.set({ page: location.pathname });
