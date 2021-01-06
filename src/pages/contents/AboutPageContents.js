@@ -91,7 +91,7 @@ const AboutPageContent = () => {
       Ruby, and Javascript (Node.js and React). For all of my projects, I also
       write documentation and unit tests.
       <br />
-      <br /> Other than coding, I love to read (check out some of{" "}
+      <br /> Other than coding, I love to read (
       <a
         href="/bookshelf"
         rel="noreferrer"
@@ -106,7 +106,23 @@ const AboutPageContent = () => {
       >
         my favorite books
       </a>
-      ), cook, create music, and spend time with family. I grew up in
+      ), cook, create music, write (
+      
+      <a
+        href="https://danielmurph8.medium.com/"
+        rel="noreferrer"
+        target="_blank"
+        className={classes.link}
+        onMouseEnter={(e) => {
+          navLinkStylesEnter(e, "underline", "2px", "#525252", "#748492");
+        }}
+        onMouseLeave={(e) => {
+          navLinkStylesLeave(e, "none", "#748492");
+        }}
+      >
+        my Medium blog
+      </a>
+      ), and spend time with family. I grew up in
       Wilmington, Delaware and go to Davidson College. You can view my resumé{" "}
       <a
         target="_blank"
