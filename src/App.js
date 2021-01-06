@@ -7,7 +7,6 @@ import { Global } from "./styles/Global";
 import ReactGA from "react-ga";
 import { createBrowserHistory } from "history";
 
-
 const history = createBrowserHistory();
 const trackingId = "UA-168791471-2";
 ReactGA.initialize(trackingId, {
