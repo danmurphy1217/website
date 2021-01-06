@@ -123,7 +123,7 @@ const AboutPageContent = () => {
         my Medium blog
       </a>
       ), and spend time with family. I grew up in
-      Wilmington, Delaware and go to Davidson College. You can view my resumé{" "}
+      Wilmington, Delaware and go to Davidson College. You can view my resume{" "}
       <a
         target="_blank"
         href="https://s3.amazonaws.com/www.dan-murphy.com/public/Dan_Murphy_Resume.pdf"
