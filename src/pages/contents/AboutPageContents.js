@@ -44,8 +44,7 @@ const AboutPageContent = () => {
         }}
       >
         Notion API Ruby Gem
-      </a>{" "}
-      and{" "}
+      </a>,{" "}
       <a
         href="https://github.com/dylane1999/SentimentAnalysisApp"
         rel="noreferrer"
@@ -59,9 +58,36 @@ const AboutPageContent = () => {
         }}
       >
         Twitter Sentiment Analysis
+      </a>,{" "}
+      <a
+        href="https://github.com/danmurphy1217/equit-ease"
+        rel="noreferrer"
+        target="_blank"
+        className={classes.link}
+        onMouseEnter={(e) => {
+          navLinkStylesEnter(e, "underline", "2px", "#525252", "#748492");
+        }}
+        onMouseLeave={(e) => {
+          navLinkStylesLeave(e, "none", "#748492");
+        }}
+      >
+        Equit-Ease
+      </a>,{" "}and{" "}
+      <a
+        href="https://github.com/danmurphy1217/CYOS"
+        rel="noreferrer"
+        target="_blank"
+        className={classes.link}
+        onMouseEnter={(e) => {
+          navLinkStylesEnter(e, "underline", "2px", "#525252", "#748492");
+        }}
+        onMouseLeave={(e) => {
+          navLinkStylesLeave(e, "none", "#748492");
+        }}
+      >
+        CYOS
       </a>
-      . Some of my favorite technologies to work with are AWS S3, AWS EC2, AWS
-      Lambda, AWS RDS, GCP Cloud Run, and Docker. I primarily code in Python,
+      . Some of my favorite technologies to work with are React, Flask, Docker, GCP Cloud Run, and AWS Lambda. I primarily code in Python,
       Ruby, and Javascript (Node.js and React). For all of my projects, I also
       write documentation and unit tests.
       <br />
