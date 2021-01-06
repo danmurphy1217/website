@@ -41,6 +41,10 @@ export const Global = createGlobalStyle`
             animation: shake 0.5s;
             animation-iteration-count: 1;
           }
+    
+    #icon-children>* {
+        flex: 1 1 33.33%;
+    }
 
           
     @keyframes shake {
