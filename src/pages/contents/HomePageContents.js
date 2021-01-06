@@ -26,7 +26,7 @@ const HomePageContent = (
     >
       Davidson College
     </a>
-    . I'm an Economics major, and I like to spend my time coding, reading, and
+    . I'm an Economics major, and I like to spend my time helping companies build better businesses and software, reading, and
     working on{" "}
     <a
       href="/projects"
