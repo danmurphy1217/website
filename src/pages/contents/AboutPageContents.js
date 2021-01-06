@@ -104,7 +104,7 @@ const AboutPageContent = () => {
           navLinkStylesLeave(e, "none", "#748492");
         }}
       >
-        my favorites
+        my favorite books
       </a>
       ), cook, create music, and spend time with family. I grew up in
       Wilmington, Delaware and go to Davidson College. You can view my resumé{" "}

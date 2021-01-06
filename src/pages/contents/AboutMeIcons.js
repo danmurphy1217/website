@@ -58,7 +58,7 @@ const FormattedIconElements = [];
 IconElements.forEach(function (icon, i) {
   FormattedIconElements.push(
     <Tooltip title={OnHoverElements[i]} aria-label={OnHoverElements[i]} size="large">
-        <Button style={{marginBottom: "35px"}}>
+        <Button style={{marginBottom: "25px"}}>
           <IconContext.Provider value={{ color: "#525252"}}>
             {icon}
           </IconContext.Provider>

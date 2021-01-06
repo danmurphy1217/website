@@ -26,7 +26,7 @@ const HomePageContent = (
     >
       Davidson College
     </a>
-    . I'm an Economics major, and I spend most of my time coding, reading, and
+    . I'm an Economics major, and I like to spend my time coding, reading, and
     working on{" "}
     <a
       href="/projects"
@@ -49,7 +49,7 @@ const HomePageContent = (
     </a>
     . I'm passionate about contributing to Open Source Software, designing
     accessible and easy-to-use Interfaces, and building a more equitable
-    technoligical future.
+    future for technologists.
     <br />
     <br />
     Learn more{" "}
