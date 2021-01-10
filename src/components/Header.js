@@ -39,17 +39,16 @@ const useStyles = makeStyles((theme) => ({
   siteNavitation: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
+    backgroundColor: fade(theme.palette.common.white, 0),
     width: "100%",
-    display: "table-cell",
     textAlign: "center",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(1),
       width: "auto",
+      backgroundColor: fade(theme.palette.common.white, 0.15),
+      "&:hover": {
+        backgroundColor: fade(theme.palette.common.white, 0.25),
+      },
     },
   },
 }));
