@@ -1,5 +1,6 @@
 import { SupportingContentText } from "../../components/PageSupportingContent";
 import { makeStyles } from "@material-ui/core/styles";
+
 import {
   navLinkStylesEnter,
   navLinkStylesLeave,
@@ -43,8 +44,7 @@ const AboutPageContent = () => {
         }}
       >
         Notion API Ruby Gem
-      </a>{" "}
-      and{" "}
+      </a>,{" "}
       <a
         href="https://github.com/dylane1999/SentimentAnalysisApp"
         rel="noreferrer"
@@ -58,13 +58,40 @@ const AboutPageContent = () => {
         }}
       >
         Twitter Sentiment Analysis
+      </a>,{" "}
+      <a
+        href="https://github.com/danmurphy1217/equit-ease"
+        rel="noreferrer"
+        target="_blank"
+        className={classes.link}
+        onMouseEnter={(e) => {
+          navLinkStylesEnter(e, "underline", "2px", "#525252", "#748492");
+        }}
+        onMouseLeave={(e) => {
+          navLinkStylesLeave(e, "none", "#748492");
+        }}
+      >
+        Equit-Ease
+      </a>,{" "}and{" "}
+      <a
+        href="https://github.com/danmurphy1217/CYOS"
+        rel="noreferrer"
+        target="_blank"
+        className={classes.link}
+        onMouseEnter={(e) => {
+          navLinkStylesEnter(e, "underline", "2px", "#525252", "#748492");
+        }}
+        onMouseLeave={(e) => {
+          navLinkStylesLeave(e, "none", "#748492");
+        }}
+      >
+        CYOS
       </a>
-      . Some of my favorite technologies to work with are AWS S3, AWS EC2, AWS
-      Lambda, AWS RDS, GCP Cloud Run, and Docker. I primarily code in Python,
+      . Some of my favorite technologies to work with are React, Flask, Docker, GCP Cloud Run, and AWS Lambda. I primarily code in Python,
       Ruby, and Javascript (Node.js and React). For all of my projects, I also
       write documentation and unit tests.
       <br />
-      <br /> Other than coding, I love to read (check out some of{" "}
+      <br /> Other than coding, I love to read (
       <a
         href="/bookshelf"
         rel="noreferrer"
@@ -77,10 +104,26 @@ const AboutPageContent = () => {
           navLinkStylesLeave(e, "none", "#748492");
         }}
       >
-        my favorites
+        my favorite books
       </a>
-      ), cook, create music, and spend time with family. I grew up in
-      Wilmington, Delaware and go to Davidson College. You can view my resumé{" "}
+      ), cook, create music, write (
+      
+      <a
+        href="https://danielmurph8.medium.com/"
+        rel="noreferrer"
+        target="_blank"
+        className={classes.link}
+        onMouseEnter={(e) => {
+          navLinkStylesEnter(e, "underline", "2px", "#525252", "#748492");
+        }}
+        onMouseLeave={(e) => {
+          navLinkStylesLeave(e, "none", "#748492");
+        }}
+      >
+        my Medium blog
+      </a>
+      ), and spend time with family. I grew up in
+      Wilmington, Delaware and go to Davidson College. You can view my resume{" "}
       <a
         target="_blank"
         href="https://s3.amazonaws.com/www.dan-murphy.com/public/Dan_Murphy_Resume.pdf"
@@ -94,7 +137,8 @@ const AboutPageContent = () => {
         }}
       >
         here
-      </a>.
+      </a>
+      .
     </SupportingContentText>
   );
 };
