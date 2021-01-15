@@ -2,45 +2,23 @@ export default function Logo() {
   return (
     <a href="/">
       <svg
-        width="142px"
-        height="29px"
-        viewBox="0 0 142 29"
-        version="1.1"
+        width="61"
+        height="45"
+        viewBox="0 0 61 62"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="logo"
+        className="svg-transform"
       >
-        <title>Dan Murphy Website Logo</title>
-        <g
-          id="Page-1"
-          stroke="none"
-          stroke-width="1"
-          fill="none"
-          fill-rule="evenodd"
-        >
-          <g id="Group" transform="translate(1.000000, 0.000000)">
-            <line
-              x1="0.5"
-              y1="26.5"
-              x2="139.5"
-              y2="26.5"
-              id="Line"
-              stroke="#525252"
-              stroke-width="3"
-              stroke-linecap="square"
-            ></line>
-            <text
-              id="Dan-Murphy"
-              font-family="-apple-system, BlinkMacSystemFont, sans-serif"
-              font-size="24"
-              font-weight="bold"
-              fill="#C8C8C8"
-            >
-              <tspan x="0" y="23">
-                Dan Murphy
-              </tspan>
-            </text>
-          </g>
-        </g>
+        <path
+          d="M32.585 3.84C38.0823 3.84 42.6083 5.43133 46.163 8.614C49.7177 11.7967 51.495 17.1907 51.495 24.796C51.495 32.5253 49.7177 38.002 46.163 41.226C42.6083 44.4087 38.0823 46 32.585 46H10.327V42.59L15.907 40.668V9.172L10.327 7.374V3.84H32.585ZM21.239 8.304V41.536H31.283C34.383 41.536 36.987 41.0813 39.095 40.172C41.203 39.2213 42.8563 37.5267 44.055 35.088C45.295 32.608 45.915 29.1773 45.915 24.796C45.915 20.4973 45.295 17.1493 44.055 14.752C42.8563 12.3133 41.203 10.6393 39.095 9.73C36.987 8.77933 34.383 8.304 31.283 8.304H21.239Z"
+          fill="#C8C8C8"
+        />
+        <path
+          opacity="0.3"
+          d="M8 54L39.6071 54L53 54"
+          stroke="black"
+          stroke-width="5"
+        />
       </svg>
     </a>
   );
