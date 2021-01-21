@@ -9,7 +9,7 @@ import Divider from "../components/extras/Divider";
 
 const HomePage = () => {
   return (
-    <body>
+    <div>
       <Container>
           <Header />
           <Descriptors
@@ -29,7 +29,7 @@ const HomePage = () => {
           <PageSupportingContent content={HomePageContent} />
       </Container>
       <Footer />
-    </body>
+    </div>
   );
 };
 

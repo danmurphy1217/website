@@ -3,6 +3,7 @@ import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
 import ProjectsPage from "./pages/Projects";
 import BookPage from "./pages/Bookshelf";
+import NotFound from "./pages/NotFound";
 import { Global } from "./styles/Global";
 import ReactGA from "react-ga";
 import { createBrowserHistory } from "history";
@@ -31,6 +32,7 @@ function App() {
         <Route exact path="/projects" component={ProjectsPage} />
         <Route exact path="/about" component={AboutPage} />
         <Route exact path="/bookshelf" component={BookPage} />
+        <Route component={NotFound} />
       </Switch>
     </Router>
   );
