@@ -25,7 +25,7 @@ const NavBarItems = {
         id: 2,
         value: "linkedin",
         icon: <LinkedInIcon/>,
-        href: "https://www.linkedin.com/in/daniel-p-murphy/"
+        href: "https://www.linkedin.com/in/dmurphy1217/"
     },
     Email: {
         id: 3,
